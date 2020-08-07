@@ -31,6 +31,7 @@ externalNativeBuild {
 ```
 
 整体示例如下：
+```
 android {
   compileSdkVersion 25
   buildToolsVersion "25.0.2"
@@ -47,6 +48,7 @@ android {
     }
   }
 }
+```
 
 3.新建cpp和.h文件
 函数名称为包名加类名，例如：
