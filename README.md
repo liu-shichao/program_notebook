@@ -55,12 +55,27 @@ android {
 
 可以用javah命令自动生成，需要先将java文件编译成classs文件
 
+.h ``这里cpp编译要加extern "c"`` 2.要包含jni.h头文件
+
 ```
-JNIEXPORT jstring JNICALL Java_org_ros2_examples_android_listener_JniUtils_getJniString
-  (JNIEnv *, jclass);
+#include <jni.h>
+
+extern "C" {
+JNIEXPORT jstring JNICALL Java_org_ros2_examples_android_talker_jniUtile_getJniString
+        (JNIEnv *, jclass);
+}
+```
+.cpp
+```
+JNIEXPORT jstring JNICALL Java_org_ros2_examples_android_talker_jniUtile_getJniString
+        (JNIEnv * env, jclass zz)
+{
+    return env-> NewStringUTF("hello jni...");
+}
+
 ```
 
-4.java文件中加载so库
+4.java文件中加载so库 这个库名称就是cmake中指定的名称
 
 ```
  static {
