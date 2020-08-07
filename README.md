@@ -13,9 +13,11 @@ add_library(name cppname.cpp)
 defaultConfig中添加
 
 '''
+
  ndk {
       abiFilters "armeabi-v7a"
     }
+    
 '''
 
 android中添加
