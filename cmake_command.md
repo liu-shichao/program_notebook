@@ -1,9 +1,9 @@
 # 记录常用cmake命令
 
 ### 1.if语句
-执行``cmake -DUSER_DEFINE=liushichao ./``，返回ok.
+执行``cmake -DUSER_DEFINE=liushichao ./``，返回err.
 ```
-if("${USER_DEFINE}" STREQUAL "liushichao")
+if(NOT "${USER_DEFINE}" STREQUAL "liushichao")
   MESSAGE("ok.")
 else()
   MESSAGE("err.")
