@@ -43,3 +43,8 @@ project(Tutorial VERSION 1.0)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 ```
+### 6.include命令
+通过定义xxx.cmake，可以重用cmake的代码
+```
+include(xxx.cmake)
+```
