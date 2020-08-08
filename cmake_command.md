@@ -24,3 +24,11 @@ get_filename_component(ANDROID_NDK_EXPECTED_PATH
 ```
 MESSAGE("$ENV{PATH}")
 ```
+
+### 4.cmake路径
+
+为了统一路径中的分割符windows ``c:\xx`` linux ``/usr/xxx``，cmake定义了统一的分割符``/``的路径表示方式，可以用file命令进行转换
+```
+file(TO_CMAKE_PATH "<path>" <variable>)
+file(TO_NATIVE_PATH "<path>" <variable>)
+```
