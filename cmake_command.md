@@ -18,3 +18,9 @@ get_filename_component(ANDROID_NDK_EXPECTED_PATH
     "./" ABSOLUTE)
 ```
 
+### 3.使用环境变量
+
+``$ENV{xxx}``可以获取环境变量xxx
+```
+MESSAGE("$ENV{PATH}")
+```
