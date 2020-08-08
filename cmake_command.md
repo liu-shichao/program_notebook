@@ -10,7 +10,7 @@ else()
 endif()
 ```
 
-### 2.
+### 2.get_filename_component
 
 获取第二个参数的绝对路径，存到第一个参数重，执行完后 ``ANDROID_NDK_EXPECTED_PATH`` 中存储的事当前路径的绝对路径
 ```
