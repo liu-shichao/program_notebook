@@ -168,3 +168,13 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-all.zip
 
 试一下编译ament的时候是用--symblelink那个选项
 ```
+
+问题：更新NDK到r18版本进行编译，替换原来的`` -DANDROID_STL=gnustl_shared``为`` -DANDROID_STL=c++_shared``,导致``fastrtps``包编译报错，错误信息为
+
+```
+unknown type name 'string_view'; did you mean 'std::string_view'?
+```
+
+原因：``libc++ exposes std::basic_string_view for any -std= but libstdc++ only for C++17.``
+
+解决方案：在``ros2_android_ws/src/eProsima/Fast-RTPS/thirdparty/asio/asio/include/asio/detail/config.hpp``中搜索``define ASIO_HAS_STD_EXPERIMENTAL_STRING_VIEW 1``，将搜到的几行全部注释掉
