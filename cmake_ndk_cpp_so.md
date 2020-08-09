@@ -78,5 +78,5 @@ Android 1.0	1	BASE
 
 ### NDK中支持的c++标准库
 NDK r18以前可以使用gnustl标准库
-r18开始去掉了gnustl标准库
+r18开始去掉了gnustl标准库，只有c++_shared 或者c++_static
 
