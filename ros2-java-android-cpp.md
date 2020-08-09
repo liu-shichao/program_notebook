@@ -168,8 +168,8 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-all.zip
 
 试一下编译ament的时候是用--symblelink那个选项
 ```
-
-问题：更新NDK到r18版本进行编译，替换原来的`` -DANDROID_STL=gnustl_shared``为`` -DANDROID_STL=c++_shared``,导致``fastrtps``包编译报错，错误信息为
+### 问题1:
+描述：更新NDK到r18版本进行编译，替换原来的`` -DANDROID_STL=gnustl_shared``为`` -DANDROID_STL=c++_shared``,导致``fastrtps``包编译报错，错误信息为
 
 ```
 unknown type name 'string_view'; did you mean 'std::string_view'?
