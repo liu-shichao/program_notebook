@@ -91,6 +91,8 @@ r18开始去掉了gnustl标准库，只有libc++,支持动态库c++_shared 或�
 LLVM 的 libc++ 是 C++ 标准库，自 Lollipop 以来 Android 操作系统便一直使用该库，并且从 NDK r18 开始成为 NDK 中唯一可用的 STL。
 ```
 
+还有个安卓的系统库，指的是 /system/lib/libstdc++.so。请勿将该库与 GNU 的全功能 libstdc++ 混淆，这里也不要将GNU的libstdc++库和llvm的c++库混淆，ndk中用的是llvm的c++库。
+
 ### Gradle生成的cmake命令的路径
 command + shift + . 显示隐藏文件
 ```
