@@ -1,32 +1,42 @@
+```
 export ANDROID_NDK=/Users/liushichao/Library/Android/sdk/ndk/16.1.4479499
 export ANDROID_NDK=/Users/liushichao/Library/Android/sdk/ndk/21.0.6113669
-
+```
 
 
 # define paths
+```
 ROOT_DIR=${HOME}/workspace/ros2/ros2_android
 AMENT_WORKSPACE=${ROOT_DIR}/ament_ws
 ROS2_ANDROID_WORKSPACE=${ROOT_DIR}/ros2_android_ws
+```
 
 # define paths
+```
 ROOT_DIR=${HOME}/workspace/ros2
 AMENT_WORKSPACE=${ROOT_DIR}/ament_ws
 ROS2_ANDROID_WORKSPACE=${ROOT_DIR}/ros2_android_ws
+```
 
 # pull and build ament
+```
 mkdir -p ${AMENT_WORKSPACE}/src
 cd ${AMENT_WORKSPACE}
 wget https://raw.githubusercontent.com/esteve/ament_java/master/ament_java.repos
 vcs import ${AMENT_WORKSPACE}/src < ament_java.repos
 colcon build
+```
 
 # android build configuration
+```
 export PYTHON3_EXEC="$( which python3 )"
 export ANDROID_ABI=armeabi-v7a
 export ANDROID_NATIVE_API_LEVEL=android-21
 export ANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-clang
+```
 
 # pull and build ros2 for android
+```
 mkdir -p ${ROS2_ANDROID_WORKSPACE}/src
 cd ${ROS2_ANDROID_WORKSPACE}
 wget https://raw.githubusercontent.com/esteve/ros2_java/master/ros2_java_android.repos
@@ -157,3 +167,4 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-all.zip
 
 
 试一下编译ament的时候是用--symblelink那个选项
+```
