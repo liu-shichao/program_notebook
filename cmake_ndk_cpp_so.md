@@ -75,3 +75,8 @@ Android 1.6	4	DONUT	Platform Highlights
 Android 1.5	3	CUPCAKE	Platform Highlights
 Android 1.1	2	BASE_1_1	
 Android 1.0	1	BASE
+
+### NDK中支持的c++标准库
+NDK r18以前可以使用gnustl标准库
+r18开始去掉了gnustl标准库
+
