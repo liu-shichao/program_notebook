@@ -1,6 +1,6 @@
 # cmake+NDK命令行编译cpp
 
-## 注意 不要用[cmake内建的ndk交叉编译](https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html#cross-compiling-for-android),因为目前不是android在维护，如果cmake与ndk的版本不匹配很容易编译出错，[出处在这里](https://developer.android.com/ndk/guides/cmake)
+#### 注意 不要用[cmake内建的ndk交叉编译](https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html#cross-compiling-for-android),因为目前不是android在维护，如果cmake与ndk的版本不匹配很容易编译出错，[出处在这里](https://developer.android.com/ndk/guides/cmake)
 
 1.cmake-toolchains
 官网： https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html
