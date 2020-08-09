@@ -80,3 +80,7 @@ Android 1.0	1	BASE
 NDK r18以前可以使用gnustl标准库
 r18开始去掉了gnustl标准库，只有libc++,支持动态库c++_shared 或者静态库c++_static，对应的文件为libc++_shared.so和libc++_static.a
 
+以下出处：https://developer.android.com/ndk/guides/cpp-support#libc
+```
+LLVM 的 libc++ 是 C++ 标准库，自 Lollipop 以来 Android 操作系统便一直使用该库，并且从 NDK r18 开始成为 NDK 中唯一可用的 STL。
+```
