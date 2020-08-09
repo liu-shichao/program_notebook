@@ -45,6 +45,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 ```
 ### 6.include命令
 通过定义xxx.cmake，可以重用cmake的代码
+可以指定包含的文件的全路径，或者让cmake去搜索，搜索顺序：1.CMAKE_MODULE_PATH变量指定的路径 2.cmake自己的Modules文件夹``/usr/local/Cellar/cmake/3.18.1/share/cmake/Modules``
 ```
 include(xxx.cmake)
 ```
