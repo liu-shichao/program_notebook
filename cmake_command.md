@@ -48,3 +48,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 ```
 include(xxx.cmake)
 ```
+
+### 7.find_path
+在``/Users/liushichao/workspace``下创建``1.txt``,执行下边代码，返回``/Users/liushichao/workspace``
+
+这个TXT_PATH如果被设置后，以后不会被更新
+```
+find_path(TXT_PATH "1.txt" /Users/liushichao/workspace/123 /Users/liushichao/workspace)
+MESSAGE("${TXT_PATH}")
+```
