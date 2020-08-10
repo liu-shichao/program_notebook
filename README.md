@@ -106,3 +106,30 @@ public class JniUtils {
 
 ```
 
+5.jni的cpp文件中调用第三方的so库方法
+
+参考：https://developer.android.com/studio/projects/configure-cmake
+
+修改CMakeLists.txt
+
+```
+cmake_minimum_required(VERSION 3.6)
+add_library(jniCpp SHARED src/main/cpp/jniCpp.cpp)
+link_directories(/Users/liushichao/workspace/ros2/ros2_android/ros2_android_ws/src/ros2_java/ros2_android_examples/ros2_talker_android/src/main/jniLibs/armeabi-v7a)
+add_library( my_package
+        SHARED
+        IMPORTED )
+set_target_properties( # Specifies the target library.
+        my_package
+
+        # Specifies the parameter you want to define.
+        PROPERTIES IMPORTED_LOCATION
+
+        # Provides the path to the library you want to import.
+        /Users/liushichao/workspace/ros2/ros2_android/ros2_android_ws/src/ros2_java/ros2_android_examples/ros2_talker_android/src/main/jniLibs/armeabi-v7a/libmy_package.so )
+
+include_directories( src/main/cpp/ )
+
+target_link_libraries(jniCpp my_package)
+
+```
