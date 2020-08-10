@@ -53,7 +53,9 @@ android {
 3.新建cpp和.h文件
 函数名称为包名加类名，例如：
 
-可以用javah命令自动生成，需要先将java文件编译成classs文件
+可以用javah命令自动生成
+在terminal进入到src/main/java目录，执行``javah org.ros2.examples.android.talker.TestJni``,生成的头文件在当前的src/main/java目录中
+
 
 .h ``这里cpp编译要加extern "c"`` 2.要包含jni.h头文件
 
