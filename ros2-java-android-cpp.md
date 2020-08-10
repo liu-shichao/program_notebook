@@ -178,3 +178,17 @@ unknown type name 'string_view'; did you mean 'std::string_view'?
 原因：``libc++ exposes std::basic_string_view for any -std= but libstdc++ only for C++17.``
 
 解决方案：在``ros2_android_ws/src/eProsima/Fast-RTPS/thirdparty/asio/asio/include/asio/detail/config.hpp``中搜索``define ASIO_HAS_STD_EXPERIMENTAL_STRING_VIEW 1``，将搜到的几行全部注释掉
+
+
+
+
+
+
+
+
+
+
+ddsi_conn_write failed -1 then you’ll need to increase your system wide UDP packet size:
+
+$ sudo sysctl -w net.inet.udp.recvspace=209715
+$ sudo sysctl -w net.inet.udp.maxdgram=65500
