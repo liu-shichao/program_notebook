@@ -2,10 +2,12 @@
 
 ## using in Android studio
 
-1.新建一个CMakeLists.txt
+1.新建一个CMakeLists.txt 
+
+### 注意 一定要加SHARED选项，不然不会生成so动态库
 
 ```
-add_library(name cppname.cpp)
+add_library(name SHARED cppname.cpp)
 ```
 
 2.修改build.gradle
