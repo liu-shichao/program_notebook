@@ -197,3 +197,18 @@ $ sudo sysctl -w net.inet.udp.maxdgram=65500
 描述： /Volumes/Android/buildbot/src/android/ndk-release-r17/external/libcxx/../../external/libcxxabi/src/abort_message.cpp:73:
 
 解决方案，这是ndk的bug，需要升级到r18beta版以上
+
+### 问题3:
+模拟器运行失败
+
+解决方案，root手机，在手机上执行dbg生成头文件
+
+小米8 root命令
+
+```
+adb root
+
+adb disable-verity
+
+adb reboot
+```
