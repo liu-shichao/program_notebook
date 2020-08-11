@@ -192,3 +192,8 @@ ddsi_conn_write failed -1 then you’ll need to increase your system wide UDP pa
 
 $ sudo sysctl -w net.inet.udp.recvspace=209715
 $ sudo sysctl -w net.inet.udp.maxdgram=65500
+
+### 问题2:
+描述： /Volumes/Android/buildbot/src/android/ndk-release-r17/external/libcxx/../../external/libcxxabi/src/abort_message.cpp:73:
+
+解决方案，这是ndk的bug，需要升级到r18beta版以上
