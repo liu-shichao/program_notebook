@@ -137,11 +137,31 @@ target_link_libraries(jniCpp my_package)
 6.jni打印日志
 
 ```
-//log定义
+//1.包含头文件
+#include <android/log.h>
+//2.log定义
 #define  LOG    "JNILOG" // 这个是自定义的LOG的TAG
 #define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG,__VA_ARGS__) // 定义LOGD类型
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG,__VA_ARGS__) // 定义LOGI类型
 #define  LOGW(...)  __android_log_print(ANDROID_LOG_WARN,LOG,__VA_ARGS__) // 定义LOGW类型
 #define LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG,__VA_ARGS__) // 定义LOGE类型
 #define LOGF(...)  __android_log_print(ANDROID_LOG_FATAL,LOG,__VA_ARGS__) // 定义LOGF类型
+//3.修改CMakeLists.txt
+find_library( # Sets the name of the path variable.
+              log-lib
+
+              # Specifies the name of the NDK library that
+              # you want CMake to locate.
+              log )
+
+# Specifies libraries CMake should link to your target library. You
+# can link multiple libraries, such as libraries you define in this
+# build script, prebuilt third-party libraries, or system libraries.
+
+target_link_libraries( # Specifies the target library.
+                       native-lib
+
+                       # Links the target library to the log library
+                       # included in the NDK.
+                       ${log-lib} )
 ```
