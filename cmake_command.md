@@ -61,4 +61,40 @@ MESSAGE("${TXT_PATH}")
 
 ### 8.configure_file
 将输入文件，转换成输出文件，可以自定义变量，改变输出文件中的值
-例如在cmakelist文件夹下定义一个foo.h.in文件
+例如在cmakelist文件夹下定义一个foo.h.in文件，或者在其他目录里创建，然后cmakelist.txt文件中指明相对路径
+在foo.h.in中可以加入如下定义
+```
+//foo.h.in
+
+#cmakedefine XXXX "@XXXX@"
+@bbb@
+
+```
+
+编辑CMakeLists.txt
+
+```
+//CMakeLists.txt
+
+set(bbb "nihao")
+set(XXXX "hahah")
+configure_file(foo.h.in foo.h @ONLY)
+```
+
+会在执行cmake命令的目录里生成foo.h文件，内容如下
+
+```
+//foo.h
+
+#define XXXX "hahah"
+nihao
+```
+
+如果CMakeLists.txt文件中没有写set(bbb "nihao") 也没写 set(XXXX "hahah")，则生成的文件如下
+
+```
+//foo.h
+
+/* #undef XXXX */
+
+```
