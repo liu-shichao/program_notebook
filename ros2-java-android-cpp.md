@@ -28,7 +28,7 @@ colcon build
 ```
 
 # android build configuration
-``
+```
 export PYTHON3_EXEC="$( which python3 )"
 export ANDROID_ABI=armeabi-v7a
 export ANDROID_NATIVE_API_LEVEL=android-21
