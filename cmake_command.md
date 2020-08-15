@@ -98,3 +98,27 @@ nihao
 /* #undef XXXX */
 
 ```
+
+### 9.cmake的function
+
+定义如下，第一个参数是函数名，第二个参数是传入的参数
+```
+function(func_name list)
+  MESSAGE("${list}") #abc
+  MESSAGE("${${list}}") #a;b;c
+endfunction()
+```
+
+调用方法如下
+
+```
+set(abc a b c)
+func_name(abc)
+```
+
+输出
+
+```
+abc
+a;b;c
+```
