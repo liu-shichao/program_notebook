@@ -58,3 +58,7 @@ include(xxx.cmake)
 find_path(TXT_PATH "1.txt" /Users/liushichao/workspace/123 /Users/liushichao/workspace)
 MESSAGE("${TXT_PATH}")
 ```
+
+### 8.configure_file
+将输入文件，转换成输出文件，可以自定义变量，改变输出文件中的值
+例如在cmakelist文件夹下定义一个foo.h.in文件
