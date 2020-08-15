@@ -28,7 +28,7 @@ colcon build
 ```
 
 # android build configuration
-```
+``
 export PYTHON3_EXEC="$( which python3 )"
 export ANDROID_ABI=armeabi-v7a
 export ANDROID_NATIVE_API_LEVEL=android-21
@@ -211,4 +211,14 @@ adb root
 adb disable-verity
 
 adb reboot
+```
+
+
+### 将自己创建的包加入到android的apk文件中
+
+只需要在android工程的package.xml中加入下边的依赖语句
+
+```
+  <build_depend>my_package</build_depend>
+  <exec_depend>my_package</exec_depend>
 ```
