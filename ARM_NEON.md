@@ -23,3 +23,6 @@ ARMv8-A, ARMv8-R, ARMv8-M
 
 参见：https://developer.android.com/ndk/guides/cpu-arm-neon
 
+### FPU
+
+FPU(float point unit): 浮点运算单元，原来与cpu一样是一个单独的处理器，在486之后，英特尔将fpu集成在了cpu之内。
