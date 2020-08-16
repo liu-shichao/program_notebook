@@ -165,3 +165,9 @@ target_link_libraries( # Specifies the target library.
                        # included in the NDK.
                        ${log-lib} )
 ```
+
+### libc++
+
+```
+注意：libc++ 不是系统库。如果使用 libc++_shared.so，必须将其包含在 APK 中。如果使用 Gradle 构建应用，此步骤会自动完成。
+```
