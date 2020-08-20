@@ -309,9 +309,9 @@ JAVA代码
    public static native int nativeCreateFile(String filePath);
     public static void createFile()
     {
-        File sdcard = Environment.getExternalStorageDirectory();
-        String fileDir = sdcard.getAbsolutePath() + "/testfolder/test.txt";
-        nativeCreateFile(fileDir);
+        //File sdcard = Environment.getExternalStorageDirectory();
+        //String fileDir = sdcard.getAbsolutePath() + "/testfolder/test.txt";
+        nativeCreateFile("/sdcard/test.txt");
     }
 ```
 
