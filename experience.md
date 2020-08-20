@@ -5,3 +5,5 @@
 3.java中不支持无符号int，int为32位，只能表示 -2147483648~2147483647 正负2GB，但是java的long是64位的，可以表示-9223372036854774808~9223372036854774807，因此当表示2GB以上的数的时候可以用long
 
 4.Could someone give some advices? Anything will be appreciated!
+
+5.How can I solve this exception ? Any advice is of great help .
