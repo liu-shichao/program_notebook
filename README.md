@@ -171,3 +171,26 @@ target_link_libraries( # Specifies the target library.
 ```
 注意：libc++ 不是系统库。如果使用 libc++_shared.so，必须将其包含在 APK 中。如果使用 Gradle 构建应用，此步骤会自动完成。
 ```
+
+
+### errno 以及 strerror
+
+```
+包含
+#include <errno.h>
+可以在程序中直接读取
+errno，可以获取最近一次的错误代码
+
+包含
+#include <string.h>
+可以调用
+strerror(errno)
+获取errno对应的字符串含义
+
+完整例子：
+
+ LOGE("again, open failed ... errno is : %d, means : %s", errno, strerror(errno));
+
+
+
+```
