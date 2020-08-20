@@ -3,3 +3,5 @@
 2.android如果sdcard的文件格式时fat的话，单个文件不能超过4GB，如果以后遇到类似问题大文件尽量拆包，为保证余量可以在3.8G的时候进行分包存储。
 
 3.java中不支持无符号int，int为32位，只能表示 -2147483648~2147483647 正负2GB，但是java的long是64位的，可以表示-9223372036854774808~9223372036854774807，因此当表示2GB以上的数的时候可以用long
+
+4.Could someone give some advices? Anything will be appreciated!
