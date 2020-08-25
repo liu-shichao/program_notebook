@@ -1,3 +1,7 @@
+# java版本 1.8
+
+java version "1.8.0_261"
+
 # Gradle版本 3.5.0
 
 
