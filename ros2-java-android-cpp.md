@@ -1,3 +1,8 @@
+# Gradle版本 3.5.0
+
+
+# NDK版本 r21
+
 ```
 export ANDROID_NDK=/Users/liushichao/Library/Android/sdk/ndk/16.1.4479499
 export ANDROID_NDK=/Users/liushichao/Library/Android/sdk/ndk/21.0.6113669
