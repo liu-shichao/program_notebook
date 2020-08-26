@@ -237,4 +237,62 @@ adb reboot
 升级android-gradle插件后报错，提示``CompileOptions.getBootClasspath()Ljava/lang/String;’.``
 
 解决方法：
-在build.gradle中，去掉与 me.tatarka.retrolambda 相关的语句
+在build.gradle中，去掉与 me.tatarka.retrolambda 相关的语句，这个库是为了让android支持java8中的lambda表达式功能, Android studio 3.0版本以后，官方支持了java8的lambda表达式功能，只要在build.gradle文件中android{}代码块内添加下边语句就行了
+
+```
+compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+      }
+```
+
+示例代码
+
+```
+apply plugin: 'com.android.application'
+apply plugin: 'org.ros2.tools.gradle'
+//apply plugin: 'me.tatarka.retrolambda'
+
+//sourceCompatibility = JavaVersion.VERSION_1_8
+//targetCompatibility = JavaVersion.VERSION_1_8
+
+android {
+  compileSdkVersion 26
+  buildToolsVersion "26.0.2"
+  defaultConfig {
+    minSdkVersion 21
+    targetSdkVersion 26
+  }
+
+compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+      }
+}
+
+buildscript {
+  repositories {
+    google()
+    jcenter()
+    mavenCentral()
+    mavenLocal()
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+
+  dependencies {
+    classpath 'com.android.tools.build:gradle:3.6.4'
+    classpath 'gradle.plugin.org.ros2.tools.gradle:ament:0.7.0'
+    //classpath 'me.tatarka:gradle-retrolambda:3.6.1'
+  }
+}
+
+repositories {
+   google()
+   jcenter()
+   mavenCentral()
+}
+
+
+```
