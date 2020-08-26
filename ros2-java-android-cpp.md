@@ -231,3 +231,10 @@ adb reboot
   <build_depend>my_package</build_depend>
   <exec_depend>my_package</exec_depend>
 ```
+
+### 问题4:
+
+升级android-gradle插件后报错，提示``CompileOptions.getBootClasspath()Ljava/lang/String;’.``
+
+解决方法：
+在build.gradle中，去掉与 me.tatarka.retrolambda 相关的语句
