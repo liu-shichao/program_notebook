@@ -29,4 +29,6 @@ android{
 
 }
 
+在运行按钮左边选择ros2_talker_android，点debug按钮就可以了
+
 ```
