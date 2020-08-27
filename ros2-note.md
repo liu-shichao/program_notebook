@@ -12,3 +12,20 @@ http://docs.ros2.org/beta1
 http://docs.ros2.org/alpha8
 
 ```
+android版的ros2可以调试运行了
+
+```
+build.gradle文件中，加入
+
+android{
+
+  ...
+
+  ndk{
+    abiFilters "armeabi-v7a"
+  }
+  ...
+
+}
+
+```
