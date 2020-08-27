@@ -19,12 +19,13 @@ build.gradle文件中，加入
 
 android{
 
-  ...
+  //...
 
   ndk{
     abiFilters "armeabi-v7a"
   }
-  ...
+  
+  //...
 
 }
 
