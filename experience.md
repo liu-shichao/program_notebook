@@ -15,3 +15,5 @@
 8.can anyone please help me.
 
 9.Much obliged. 
+
+10.c++中long long 对应的int64_t类型，long对应的int32_t.java中long对应的64位，jni中jlong也是int64_t，需要用long long与之对应
