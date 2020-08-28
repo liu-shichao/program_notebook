@@ -17,3 +17,5 @@
 9.Much obliged. 
 
 10.c++中long long 对应的int64_t类型，long对应的int32_t.java中long对应的64位，jni中jlong也是int64_t，需要用long long与之对应
+
+11.vscode 调整窗口字体大小的方法：点击左下角的齿轮，在出现的settings窗口中输入zoom，搜索出现的两项，一个是勾选是否用滚轮缩放编辑窗口的字体，一个是设置窗体本身字体的缩放等级，可以设置成1
