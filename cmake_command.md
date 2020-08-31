@@ -1,5 +1,15 @@
 # 记录常用cmake命令
 
+### 2. file命令（神器）
+
+```
+file(GLOB_RECURSE dyso "/Users/liushichao/Exercise/build_opencv_4.3.0/lib/*.dylib")
+target_link_libraries(test_sort
+${dyso}
+)
+MESSAGE("${dyso}")
+```
+
 ### 1.if语句
 执行``cmake -DUSER_DEFINE=liushichao ./``，返回err.
 ```
