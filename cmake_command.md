@@ -2,6 +2,8 @@
 
 ### 2. file命令（神器）
 
+下边命令能将opencv的全部库文件都添加到link中
+
 ```
 file(GLOB_RECURSE dyso "/Users/liushichao/Exercise/build_opencv_4.3.0/lib/*.dylib")
 target_link_libraries(test_sort
