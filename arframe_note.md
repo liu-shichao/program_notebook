@@ -1,0 +1,1 @@
+看一下是否可以从  CVPixelBuffer 获取presentTime,看看与avframe中的是不是同一个
