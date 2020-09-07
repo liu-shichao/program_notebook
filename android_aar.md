@@ -61,7 +61,21 @@ AAR（Android ARchive）,是安卓的库，几乎能够包含apk中的全部内�
 implementation project(":you_module")
 ```
 
-ok.
+6.编译运行就好了.
+
+7.当提示类似``More than one file was found with OS independent path 'lib/armeabi-v7a/libc++_shared.so'``这种错误时：
+
+```
+android {
+       ....
+    defaultConfig {
+            .....
+        packagingOptions {
+                    pickFirst 'lib/armeabi-v7a/libtensorflowlite_jni.so'
+                    pickFirst 'lib/armeabi-v7a/libtensorflowlite_gpu_jni.so'
+                    pickFirst 'lib/armeabi-v7a/libc++_shared.so'//添加这行代码
+                }
+```
 
 注意，如果AAR包里使用的是armeabi-v7a, 而app中默认是arm64-v8a架构的话，AAR包中的so动态连接库不会被打包进apk，需要调整app的架构和aar包中的一致
 
