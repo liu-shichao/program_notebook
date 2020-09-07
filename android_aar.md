@@ -41,6 +41,8 @@ AAR（Android ARchive）,是安卓的库，几乎能够包含apk中的全部内�
 
 3.保存，点击File -> Sync Project With Gradle Files.
 
+4.build -> build apk,如果不成功，需要clean一下再build apk.
+
 ### 引用AAR库
 
 引用AAR库分为两种方式，一种是引用编译好的AAR包，另一种是引用源码，现在介绍第一种
