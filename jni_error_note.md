@@ -6,7 +6,7 @@
 2020-09-09 13:50:18.119 28623-28800/com.sogou.sgmar.demo A/libc: Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0xfffffff4 in tid 28800 (VlcObject), pid 28623 (ogou.sgmar.demo)
 ```
 
-经过彬哥指点，解决方法如下
+#### 方法一：经过彬哥指点，解决方法如下
 
 1.找到加载so的java文件
 
@@ -31,4 +31,21 @@ public class xxxx {
     }
 }
 
+```
+
+#### 方法二：在build.gradle文件中添加下边的代码
+
+```
+android {
+        ...
+    defaultConfig {
+            ...
+        externalNativeBuild {
+                ...
+            cmake {
+                cppFlags ""
+                arguments "-DANDROID_STL=c++_shared" //add this line
+            }
+        }
+    }
 ```
