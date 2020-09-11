@@ -1,3 +1,39 @@
+### link error
+
+  出现以下类似的提示，可以考虑是不是某个新添加的cpp，没有添加到cmakelist.txt的 add_library中
+```
+/build_isolated/my_package'
+Scanning dependencies of target my_package
+[  8%] Building CXX object CMakeFiles/my_package.dir/src/node/frame_update_node/frame_update_node.cpp.o
+[ 16%] Linking CXX shared library libmy_package.so
+/Users/liushichao/workspace/ros2/ros2_android/ros2_android_ws/src/ros2_example/my_package/src/manager/node_manager/node_manager.cpp:31: error: undefined reference to 'sgmm::sensor_update::SensorUpdateNode::publish_gps(double, double, double, double, double)'
+/Users/liushichao/Library/Android/sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/memory:2155: error: undefined reference to 'sgmm::sensor_update::SensorUpdateNode::SensorUpdateNode(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&)'
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+make[2]: *** [libmy_package.so] Error 1
+make[1]: *** [CMakeFiles/my_package.dir/all] Error 2
+make: *** [all] Error 2
+```
+
+添加sensor_update_node.cpp后 如下
+
+```
+add_library(${PROJECT_NAME} SHARED 
+            src/my_package.cpp 
+            src/node/frame_update_node/frame_update_node.cpp
+            src/node/object_detector_node/object_detector_node.cpp
+            src/object_detector/object_detector.cpp
+            src/manager/assets_manager/assets_manager.cpp
+            src/manager/node_manager/node_manager.cpp
+            src/util/file_util/file_util.cpp
+            src/instantiation/instantiation.cpp
+            src/instantiation/hungarian.cpp
+            src/instantiation/kalman_tracker.cpp
+            src/instantiation/sort.cpp
+            src/node/sensor_update_node/sensor_update_node.cpp)
+```
+
+
+
 ### Ros2创建msg依赖其他msg
 
 0.创建xxx.msg文件，这里要注意，必须大写字母开头
