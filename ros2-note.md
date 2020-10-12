@@ -14,7 +14,7 @@
 将OpenSSL的路径添加到环境变量``OPENSSL_ROOT_DIR``中，如果没装过OpenSSL就安装一下
 
 ```
-export OPENSSL_ROOT_DIR=/usr/local/opt/openssl
+export OPENSSL_ROOT_DIR=/usr/local/Cellar/openssl@1.1/1.1.1g/
 ```
 
 
