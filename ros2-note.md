@@ -1,3 +1,23 @@
+### Could NOT find OpenSSL
+
+  colcon build 的时候，有时候会提示这个错误
+  ```
+   Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the
+  system variable OPENSSL_ROOT_DIR (missing: OPENSSL_INCLUDE_DIR)
+  ```
+原因：
+
+没有找到OpenSSL
+
+解决方法：
+
+将OpenSSL的路径添加到环境变量``OPENSSL_ROOT_DIR``中，如果没装过OpenSSL就安装一下
+
+```
+export OPENSSL_ROOT_DIR=/usr/local/opt/openssl
+```
+
+
 ### link error
 
   出现以下类似的提示，可以考虑是不是某个新添加的cpp，没有添加到cmakelist.txt的 add_library中
