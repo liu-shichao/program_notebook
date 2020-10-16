@@ -1,5 +1,8 @@
 ### ndk编译cpp文件为可执行程序
 
+[出处](https://developer.android.com/ndk/guides/cmake#命令行)
+
+
 方式1.编译动态连接的可执行程序
 
 ```
