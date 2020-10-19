@@ -131,8 +131,28 @@ set_target_properties( # Specifies the target library.
 include_directories( src/main/cpp/ )
 
 target_link_libraries(jniCpp my_package)
+```
+
+通过上边的步骤就能完成编译了，但是要将预编译的so文件打包到apk中还需要进行下边的配置
+
+在build.gradle中添加sourceSets.main字段，样例如下：
 
 ```
+android {
+    ...
+    defaultConfig {
+        ...
+        sourecSets.main{
+            //可以指定多个目录，但是每个目录里一定要定义abi支持的文件名称，例如../src/main/jniLibs/armeabi-v7a/xxx.so
+            jniLibs.srcDirs = ['../src/main/jniLibs', '/Users/liushichao/workspace/ros2/ros2_android/ros2_android_ws/src/ros2_example/thirdparty']
+        }
+        ...
+    }
+    ...
+}
+```
+
+
 
 6.jni打印日志
 
