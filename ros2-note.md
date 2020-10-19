@@ -1,3 +1,10 @@
+### Qt5
+
+```
+export Qt5_DIR=/Users/liushichao/Qt5.12.0/5.12.0/clang_64
+```
+
+
 ### Could NOT find OpenSSL
 
   colcon build 的时候，有时候会提示这个错误
