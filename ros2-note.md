@@ -1,5 +1,6 @@
 ## 笔记
 ### rmw全称
+出处：https://index.ros.org/doc/ros2/Concepts/DDS-and-ROS-middleware-implementations/
 ```
 “ROS Middleware interface” (a.k.a. rmw interface or just rmw)
 ```
