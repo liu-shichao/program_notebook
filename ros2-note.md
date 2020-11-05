@@ -33,6 +33,13 @@ export Qt5_DIR=/Users/liushichao/Qt5.12.0/5.12.0/clang_64
 export OPENSSL_ROOT_DIR=/usr/local/Cellar/openssl@1.1/1.1.1g/
 ```
 
+如果继续提示出错
+```
+cannot link directly with dylib/framework, your binary is not an allowed client of /usr/lib/libcrypto.dylib for architecture x86_64
+```
+
+则清空所编译包的build 文件和install文件，再次尝试，原因是cmake找到一次错误的位置就会一直用这个位置，出处https://stackoverflow.com/questions/58446253/xcode-11-ld-error-your-binary-is-not-an-allowed-client-of-usr-lib-libcrypto-dy
+
 
 ### link error
 
