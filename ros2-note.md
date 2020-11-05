@@ -10,7 +10,7 @@
 ### Qt5
 
 ```
-export Qt5_DIR=/Users/liushichao/Qt5.12.0/5.12.0/clang_64
+export Qt5_DIR=/usr/local/opt/qt5
 ```
 
 
