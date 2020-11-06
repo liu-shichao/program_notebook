@@ -18,7 +18,7 @@ oss << a;
 cout << oss.str(); //输出换行
 ```
 
-这里result输出并不是“10”，而是会换行，因为a的类型是char，所以会把a的值作为ascii码的值，转换成string，要想输出“10”，需要强转a成int类型
+这里标准输出打印的并不是“10”，而是会换行，因为a的类型是char，所以会把a的值作为ascii码的值，转换成string，要想输出“10”，需要强转a成int类型
 
 ```
 unsinged char a = 10;
