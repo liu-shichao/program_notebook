@@ -1,5 +1,10 @@
 # 记录常用cmake命令
 
+### 3. ${PROJECT_SOURCE_DIR} 
+
+TODO 测试后补充说明
+
+
 ### 2. file命令（神器）
 
 下边命令能将opencv的全部库文件都添加到link中
