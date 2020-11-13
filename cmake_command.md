@@ -1,5 +1,16 @@
 # 记录常用cmake命令
 
+
+add_dependencies()
+
+
+add_custom_command()
+
+
+### 4. add_custom_target
+
+这个命令不会创建目标文件
+
 ### 3. ${PROJECT_SOURCE_DIR} 
 
 TODO 测试后补充说明
