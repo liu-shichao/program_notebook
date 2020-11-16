@@ -1,6 +1,20 @@
 # 记录常用cmake命令
 
 
+### 7 MESSAGE
+
+有些情况下需要指定消息的错误等级才能显示出来这个消息，用来调试用，例如
+```
+  message(FATAL_ERROR
+        "The RMW implementation has been specified as "
+        "'${requested_rmw_implementation}' "
+        "through the environment variable 'RMW_IMPLEMENTATION', "
+        "however this needs to match the RMW implementation "
+        "'${default_rmw_implementation}', "
+        "which was specified when the 'rmw_implementation' package was built.")
+```
+
+
 add_dependencies()
 
 
