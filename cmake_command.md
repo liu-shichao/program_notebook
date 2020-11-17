@@ -1,6 +1,13 @@
 # 记录常用cmake命令
 
 
+### 8 指定编译release版本或debug版本
+```
+-DCMAKE_BUILD_TYPE=Debug
+
+-DCMAKE_BUILD_TYPE=Release
+```
+
 ### 7 MESSAGE
 
 有些情况下需要指定消息的错误等级才能显示出来这个消息，用来调试用，例如
