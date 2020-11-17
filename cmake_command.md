@@ -2,11 +2,31 @@
 
 
 ### 8 指定编译release版本或debug版本
+
+注意：如果不使用CMAKE_BUILD_TYPE参数，则默认是Debug
+
 ```
 -DCMAKE_BUILD_TYPE=Debug
 
 -DCMAKE_BUILD_TYPE=Release
 ```
+
+例子：
+
+```
+mkdir Release  
+cd Release  
+cmake -DCMAKE_BUILD_TYPE=Release ..  
+make 
+```
+
+```
+mkdir Debug  
+cd Debug  
+cmake -DCMAKE_BUILD_TYPE=Debug ..  
+make  
+```
+
 
 ### 7 MESSAGE
 
