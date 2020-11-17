@@ -42,10 +42,10 @@ make
 ```
 
 
-add_dependencies()
+### 6. add_dependencies()
 
 
-add_custom_command()
+### 5. add_custom_command()
 
 
 ### 4. add_custom_target
