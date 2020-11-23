@@ -1,6 +1,33 @@
 # 记录常用cmake命令
 
 
+### 9. target_compile_definitions
+
+作用：#define xxxxx zzzz
+
+用法：
+
+```
+target_compile_definitions(hello MY_DEFINE="nihao")
+```
+
+如果在编译的main.cpp中，写入如下代码的话
+
+```
+int main()
+{
+#ifdef MY_DEFINE
+  cout<< MY_DEFINE << endl;
+#else
+  cout << "undefine" << endl;
+#endif
+  return 0;
+}
+```
+
+会输出 ``nihao``
+
+
 ### 8 指定编译release版本或debug版本
 
 注意：如果不使用CMAKE_BUILD_TYPE参数，则默认是Debug
