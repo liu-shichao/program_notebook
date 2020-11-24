@@ -1,3 +1,18 @@
+
+### 将double转换成string时保留15位小数
+
+```
+#include <iomanip>
+#include <sstream>
+
+double ceshi = std::stod("3.123456789");
+stringstream ss;
+ss << std::setprecision(15) << ceshi;
+std::string ceshi_str = ss.str();
+cout << ceshi_str <<endl;
+```
+
+
 c++ primer 5th p600
 
 ### 使用ms后缀
