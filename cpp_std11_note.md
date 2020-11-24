@@ -12,6 +12,14 @@ std::string ceshi_str = ss.str();
 cout << ceshi_str <<endl;
 ```
 
+java中
+
+```
+其中String s=String.format("%.2f",d)表示小数点后任意两位小数，其中2为表示两位小数，若需要三位小数，把2改为3即可，其他同理。
+```
+
+
+
 
 c++ primer 5th p600
 
