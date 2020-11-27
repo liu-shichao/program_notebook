@@ -1,3 +1,9 @@
+### 3.std::unique_lock 与 std::lock_gard的区别
+
+unique_lock可以随时释放锁，调用unlock()
+
+lock_gard需要等到生命周期结束后，才能自动释放锁。
+
 
 ### 将double转换成string时保留15位小数
 
