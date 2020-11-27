@@ -1,8 +1,18 @@
-### 3.std::unique_lock 与 std::lock_gard的区别
+### 3.std::unique_lock 与 std::lock_guard的区别
 
 unique_lock可以随时释放锁，调用unlock()
 
-lock_gard需要等到生命周期结束后，才能自动释放锁。
+lock_guard需要等到生命周期结束后，才能自动释放锁。
+
+```
+用法示例：
+    {
+        std::unique_lock<std::mutex> lock_get_lane_data(mutex_lan_date_msg_);
+        //lock_get_lane_data.unlock();
+    }
+
+```
+
 
 
 ### 将double转换成string时保留15位小数
