@@ -1,3 +1,37 @@
+### 5.condition_variable
+
+wait_for可以指定等待时间，用来实现定时器效果
+
+下边的代码，可以通过condition.signal()来唤醒阻塞的线程，其他时候会到一秒钟自动唤醒，但是这种可能会有假唤醒的时候，如果要避免假唤醒，可以再传递一个函数，返回bool类型。
+
+```
+std::unique_lock<std::mutex> sleep_lock(mutex_);
+condition.wait_for(sleep_lock, std::chrono::milliseconds(1000));
+```
+
+
+
+
+
+### 4.运算符优先级
+
+```
+
+*乘 /除
+
++加 -减
+
+>大于 <小于
+
+==等于 !=不等于
+
+&&与 
+
+||或
+
+```
+
+
 ### 3.std::unique_lock 与 std::lock_guard的区别
 
 unique_lock可以随时释放锁，调用unlock()
