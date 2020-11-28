@@ -10,7 +10,7 @@
  |
  v
 
- i  <--- 如果i 是const的话，就是底层const
+ i  <--- 如果i 是const的话，就是底层const， 底层const的写法 ： const int * p = i; ,const 直接修饰的是int，代表指向的是常量的int类型
 
 
 ```
