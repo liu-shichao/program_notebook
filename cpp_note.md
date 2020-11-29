@@ -1,3 +1,45 @@
+### 12.cpp文件中编写模板的定义
+
+参考：
+
+https://stackoverflow.com/a/115735
+
+https://www.codeproject.com/Articles/48575/How-to-Define-a-Template-Class-in-a-h-File-and-Imp
+
+```
+//mstack.hpp
+template<typename T>
+class mstack{
+ void push(const T& e);
+};
+```
+
+```
+//mstack.cpp
+template<typename T>
+void mstack<T>::push(const T& e) {
+ data_.push_back(e);
+}
+
+//important!!!
+// this func is no need to be call.
+void testxxx() {
+ mstack<int> ms;
+ ms.push(1);
+}
+```
+```
+//client.cpp
+
+void main() {
+ mstack<int> m_c_s;
+ m_c_s.push(2334);
+}
+
+```
+
+
+
 ### 11.类中的const成员函数
 
 参考： c++ primer 5 中文版 p231
