@@ -18,6 +18,8 @@
 
 ```
 
+也可以调用view类的post方法，直接将Runnable添加到ui线程的消息队列中
+
 
 ### 修改appId
 
