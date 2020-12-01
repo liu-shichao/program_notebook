@@ -1,3 +1,24 @@
+### android Timer中不能直接修改UI界面
+
+要调用runOnUiThread
+
+```
+        status_timer = new Timer();
+        status_timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        statusUpdateTimer();
+                    }
+                });
+            }
+        }, 0, STATUS_UPDATE_TIMER_VALUE * 1000);
+
+```
+
+
 ### 修改appId
 
 ```
