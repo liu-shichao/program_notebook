@@ -8,7 +8,7 @@
 用法：
 
 ```
-target_compile_definitions(hello MY_DEFINE="nihao")
+target_compile_definitions(hello PUBLIC MY_DEFINE="nihao")
 ```
 
 如果在编译的main.cpp中，写入如下代码的话
