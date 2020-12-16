@@ -1,0 +1,25 @@
+asio库是纯头文件的库，使用时只要包含头文件即可，但是要指定一个宏定义，以及指定c++的版本为11以上，具体的cmakelist如下
+
+```
+set(CMAKE_CXX_STANDARD 11)
+
+project(log_convertor)
+
+add_executable(
+    ${PROJECT_NAME}
+    src/main.cpp
+)
+
+target_include_directories(
+    ${PROJECT_NAME}
+    PUBLIC
+    /Users/liushichao/workspace/library/rapidjson/include
+    /Users/liushichao/Desktop/asio/asio/include
+)
+target_compile_definitions(
+    ${PROJECT_NAME} 
+    PUBLIC 
+    ASIO_STANDALONE)
+
+
+```
