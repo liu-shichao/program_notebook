@@ -1,4 +1,13 @@
 
+### 3.git删除子模块
+
+OtherLibrary/MKStore是子模块的文件夹路径，相对于跟路径，执行这个命令不会删除已有的代码文件，只会删除子模块标记
+
+```
+git rm --cached OtherLibrary/MKStore
+```
+
+
 ### 2.git中提交空文件
 
 git中是不跟踪空文件的，所以``git add .``之后并不会将空文件夹加入到缓存区，如果需要提交一个空目录需要再空目录中新建一个``.gitkeep``文件，内容可以为空，这样再add然后commit就会有了。
