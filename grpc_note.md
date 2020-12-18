@@ -1,8 +1,8 @@
-### 交叉编译安卓ndk版本的grpc的demo程序
+### 3.交叉编译安卓ndk版本的grpc的demo程序
 
 
 
-### 交叉编译安卓ndk版本的grpc静态库 (cross compile grpc c++ cpp for android ndk on mac)
+### 2.交叉编译安卓ndk版本的grpc静态库 (cross compile grpc c++ cpp for android ndk on mac)
 
 
 先在mac上编译一遍mac版本的，因为后边要用到其中的两个工具，[参考链接](https://github.com/grpc/grpc/blob/e33849682c410452596ebf008a2b984e388e4f99/test/distrib/cpp/run_distrib_test_raspberry_pi.sh#L29)
@@ -37,7 +37,7 @@ cmake -DCMAKE_TOOLCHAIN_FILE=/Users/liushichao/Library/Android/sdk/ndk/21.0.6113
 
 
 
-### 链接错误
+### 1.链接错误
 
 example/helloworld
 
