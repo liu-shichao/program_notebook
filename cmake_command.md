@@ -1,5 +1,23 @@
 # 记录常用cmake命令
 
+### 10.find_package()
+作用：查找已经安装的包，首先在``${CMAKE_MODULE_PATH}``中查找，Findxxx.cmake，然后在``<CMAKE_ROOT>/share/cmake-x.y/Modules/``中查找Findxxx.cmake，如果这两个文件中都找不到Findxxx.cmake，则查找xxxConfig.cmake 或者xxx-config.cmake。
+
+设置查找文件夹路径
+```
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
+```
+
+
+找到后，会设置以下几个变量
+```
+xxx_FOUND
+xxx_INCLUDE_DIRS or _INCLUDES
+xxx_LIBRARIES or _LIBRARIES or _LIBS
+xxx_DEFINITIONS
+```
+
+
 
 ### 9. target_compile_definitions
 
