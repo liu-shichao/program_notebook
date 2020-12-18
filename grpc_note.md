@@ -3,6 +3,8 @@
 
 先在mac上编译一遍mac版本的，因为后边要用到其中的两个工具，[参考链接](https://github.com/grpc/grpc/blob/e33849682c410452596ebf008a2b984e388e4f99/test/distrib/cpp/run_distrib_test_raspberry_pi.sh#L29)
 
+
+然后再用ndk的cmake工具链交叉编译安卓的ndk版本
 ```
 cmake -DCMAKE_TOOLCHAIN_FILE=/Users/liushichao/Library/Android/sdk/ndk/21.0.6113669/build/cmake/android.toolchain.cmake \
  -DANDROID_ABI=armeabi-v7a\
