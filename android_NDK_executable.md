@@ -37,7 +37,9 @@ cmake .. -DCMAKE_TOOLCHAIN_FILE=/Users/liushichao/Library/Android/sdk/ndk/21.0.6
 
 2.ndk compile executable
 
-3.adb push executor data/exesh
+2.5. adb root
+
+3.adb push ./exesh executor data/exesh
 
 4.adb shell 
 
