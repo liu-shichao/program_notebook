@@ -1,5 +1,25 @@
+### vscode C++ / Cpp自动补全功能有些成员不提示的解决方法
 
-自定义的代码段，可以快速创建模板
+1. 卸载``ms-vscode.cpptools``插件，重新安装
+
+2. 按``command + p``输入``settings.json``，打开配置文件
+
+3. 在配置文件中添加如下代码，开启智能提示
+
+```
+ "editor.minimap.enabled": true,
+    "C_Cpp.autocomplete": "Default",
+    "[cpp]": {
+        "editor.quickSuggestions": true
+    },
+    "[c]": {
+        "editor.quickSuggestions": true
+    }
+}
+```
+
+
+### 自定义的代码段，可以快速创建模板
 
 官方文档：https://code.visualstudio.com/docs/editor/userdefinedsnippets#_assign-keybindings-to-snippets
 
