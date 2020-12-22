@@ -1,4 +1,4 @@
-### vscode C++ / Cpp自动补全功能有些成员不提示的解决方法
+### 2.vscode C++ / Cpp自动补全功能有些成员不提示的解决方法
 
 1. 卸载``ms-vscode.cpptools``插件，重新安装
 
@@ -19,7 +19,7 @@
 ```
 
 
-### 自定义的代码段，可以快速创建模板
+### 1.自定义的代码段，可以快速创建模板
 
 官方文档：https://code.visualstudio.com/docs/editor/userdefinedsnippets#_assign-keybindings-to-snippets
 
