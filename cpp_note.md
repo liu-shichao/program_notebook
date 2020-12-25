@@ -1,3 +1,15 @@
+### 13.c++操作符 / operators
+
+C++ divides the operators into the following groups:
+
+```
+Arithmetic operators
+Assignment operators
+Comparison operators
+Logical operators
+Bitwise operators
+```
+
 ### 12.cpp文件中编写模板的定义
 
 参考：
