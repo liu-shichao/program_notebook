@@ -1,5 +1,7 @@
 ### 13.c++操作符 / operators
 
+c++ 11 引入了新的操作夫，用户定义字面量操作符，https://en.cppreference.com/w/cpp/language/user_literal
+
 C++ divides the operators into the following groups:
 
 ```
