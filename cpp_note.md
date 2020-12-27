@@ -3,6 +3,12 @@
 1.递归展开参数包
 ```
 #include <iostream>
+using namespace std;
+
+std::string operator""_s (const char* orign) {
+
+  return  orign;
+}
 
 template <typename T>
 T sum(T head) {
@@ -11,10 +17,10 @@ T sum(T head) {
 
 template <typename T, typename... Types> 
 T sum(T head, Types... args) {
+  cout << sizeof...(args) << endl;
   return head + sum<T>(args...);
 }
 
-using namespace std;
 int main(int argc, char* argv[]) {
   cout << sum(1, 2, 3, 4, 5) << endl;
 }
