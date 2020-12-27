@@ -1,3 +1,28 @@
+### 14.可变参数数模板 
+
+1.递归展开参数包
+```
+#include <iostream>
+
+template <typename T>
+T sum(T head) {
+  return head;
+}
+
+template <typename T, typename... Types> 
+T sum(T head, Types... args) {
+  return head + sum<T>(args...);
+}
+
+using namespace std;
+int main(int argc, char* argv[]) {
+  cout << sum(1, 2, 3, 4, 5) << endl;
+}
+```
+
+
+
+
 ### 13.c++操作符 / operators
 
 c++ 11 引入了新的操作夫，用户定义字面量操作符，https://en.cppreference.com/w/cpp/language/user_literal
