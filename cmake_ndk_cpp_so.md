@@ -1,3 +1,42 @@
+### ndk与pthread
+
+ndk需要制定ANDROID_NATIVE_API_LEVEL=android-28以上才支持pthread.
+
+```
+export ANDROID_NDK=/Users/liushichao/Library/Android/sdk/ndk/21.0.6113669
+AMENT_WORKSPACE=${HOME}/workspace/sgmm_ros2/ament_ws
+ROS2_ANDROID_WORKSPACE=${HOME}/ros2_ws
+# android build configuration
+export PYTHON3_EXEC="$( which python3 )"
+export ANDROID_ABI=armeabi-v7a
+export ANDROID_NATIVE_API_LEVEL=android-28
+export ANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-clang
+cd ${ROS2_ANDROID_WORKSPACE}
+source ${AMENT_WORKSPACE}/install/local_setup.sh
+ament build --isolated --only-packages cyclonedds\
+  --cmake-args \
+  -DBUILD_TESTING=OFF \
+  -DPYTHON_EXECUTABLE=${PYTHON3_EXEC} \
+  -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake \
+  -DANDROID_FUNCTION_LEVEL_LINKING=OFF \
+  -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL} \
+  -DANDROID_TOOLCHAIN_NAME=${ANDROID_TOOLCHAIN_NAME} \
+  -DANDROID_STL=c++_shared \
+  -DCMAKE_CXX_STANDARD=17 \
+  -DANDROID_ABI=${ANDROID_ABI} \
+  -DANDROID_NDK=${ANDROID_NDK} \
+  -DENABLE_SSL=NO \
+  -DProtobuf_DIR=/Users/liushichao/grpc/install/lib/cmake/protobuf \
+  -DgRPC_DIR=/Users/liushichao/grpc/install/lib/cmake/grpc \
+  -DTHIRDPARTY=ON \
+  -DCOMPILE_EXAMPLES=OFF \
+  -DCMAKE_FIND_ROOT_PATH="$AMENT_WORKSPACE/install;$ROS2_ANDROID_WORKSPACE/install_isolated" \
+  -- \
+  --parallel \
+  --ament-gradle-args \
+  -Pament.android_stl=c++_shared -Pament.android_abi=$ANDROID_ABI -Pament.android_ndk=$ANDROID_NDK --
+```
+
 # cmake+NDK命令行编译cpp
 
 #### 注意 不要用[cmake内建的ndk交叉编译](https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html#cross-compiling-for-android),因为目前不是android在维护，如果cmake与ndk的版本不匹配很容易编译出错，[出处在这里](https://developer.android.com/ndk/guides/cmake)
