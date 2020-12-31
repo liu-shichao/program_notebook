@@ -1,3 +1,37 @@
+### ndk foxy
+```
+# define paths
+export ANDROID_NDK=/Users/liushichao/Library/Android/sdk/ndk/21.0.6113669
+ROOT_DIR=${HOME}/new_ros
+AMENT_WORKSPACE=${ROOT_DIR}/ament_ws
+ROS2_ANDROID_WORKSPACE=${ROOT_DIR}/ros2_ws
+# android build configuration
+export PYTHON3_EXEC="$( which python3 )"
+export ANDROID_ABI=armeabi-v7a
+export ANDROID_NATIVE_API_LEVEL=android-28
+export ANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-clang
+cd ${ROS2_ANDROID_WORKSPACE}
+source ${AMENT_WORKSPACE}/install/local_setup.sh
+ament build --isolated \
+  --cmake-args \
+  -DBUILD_TESTING=OFF \
+  -DPYTHON_EXECUTABLE=${PYTHON3_EXEC} \
+  -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake \
+  -DANDROID_FUNCTION_LEVEL_LINKING=OFF \
+  -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL} \
+  -DANDROID_TOOLCHAIN_NAME=${ANDROID_TOOLCHAIN_NAME} \
+  -DANDROID_STL=c++_shared \
+  -DCMAKE_CXX_STANDARD=17 \
+  -DANDROID_ABI=${ANDROID_ABI} \
+  -DANDROID_NDK=${ANDROID_NDK} \
+  -DENABLE_SSL=NO \
+  -DProtobuf_DIR=/Users/liushichao/grpc/install/lib/cmake/protobuf \
+  -DgRPC_DIR=/Users/liushichao/grpc/install/lib/cmake/grpc \
+  -DTHIRDPARTY=ON \
+  -DCOMPILE_EXAMPLES=OFF \
+  -DCMAKE_FIND_ROOT_PATH="$AMENT_WORKSPACE/install;$ROS2_ANDROID_WORKSPACE/install_isolated"
+```
+
 ## 笔记
 ### rmw全称
 出处：https://index.ros.org/doc/ros2/Concepts/DDS-and-ROS-middleware-implementations/
