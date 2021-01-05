@@ -1,4 +1,11 @@
-## 在gradle脚本中添加shell命令
+### 2.finalizedBy在指定task结束后调用另一个task
+
+```
+参考连接 https://stackoverflow.com/questions/32878383/gradle-how-to-run-custom-task-after-an-android-library-is-built/47744013
+assembleRelease.finalizedBy(copyAARToCommonLibs)
+```
+
+### 1.在gradle脚本中添加shell命令
 
 
 在要执行的build.gradle文件夹中添加如下命令
