@@ -1,3 +1,13 @@
+### 3.创建gradle插件
+
+参考链接：https://juejin.cn/post/6887581345384497165
+
+```
+1.创建空文件夹
+2.执行gradle init
+3.按照提示选择即可
+```
+
 ### 2.finalizedBy在指定task结束后调用另一个task
 
 ```
