@@ -1,3 +1,61 @@
+### 4.发布gradle插件
+
+
+参考链接：https://juejin.cn/post/6887581345384497165
+
+```
+1.在build.gradle中添加id 'maven-publish'
+
+plugins {
+    // Apply the Java Gradle plugin development plugin to add support for developing Gradle plugins
+    id 'java-gradle-plugin'
+
+    // Apply the Groovy plugin to add support for Groovy
+    id 'groovy'
+
+    id 'maven-publish'
+}
+
+2.加入publishing字段
+
+publishing {
+    publications {
+        // 这里的 hello 可以任意命名
+        hello(MavenPublication) {
+            // 插件的组ID，建议设置为插件的包名
+            groupId = 'com.lenebf.plugin'
+            // 翻译过来是 工件ID，我的理解是插件的名字
+            artifactId = 'hello'
+            version = '0.0.1'
+            // 组件类型，我们的插件其实就是Java组件
+            from components.java
+        }
+    }
+}
+
+3.执行./gradlew tasks查看全部的task
+
+4. 执行./gradlew publishHelloPublicationToMavenLocal进行发布，会自动编译
+会自动发布到本地仓库/Users/liushichao/.m2/repository 
+
+5. 也可以自定义仓库的位置
+
+publishing {
+    ...
+    repositories {
+        maven {
+            // $rootDir 表示你项目的根目录
+            url = "$rootDir/repo"
+        }
+    }
+}
+
+然后会多出一个task，执行这个task
+./gradlew publishPluginMavenPublicationToMavenRepository 
+
+```
+
+
 ### 3.创建gradle插件
 
 参考链接：https://juejin.cn/post/6887581345384497165
