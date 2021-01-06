@@ -1,3 +1,45 @@
+### 7.上传插件到gradle官方仓库
+
+参考链接： https://plugins.gradle.org/docs/submit
+
+1.引入插件 id "com.gradle.plugin-publish" version "0.12.0"
+
+```
+plugins {
+    // Apply the Java Gradle plugin development plugin to add support for developing Gradle plugins
+    id 'java-gradle-plugin'
+
+    // Apply the Groovy plugin to add support for Groovy
+    id 'groovy'
+    id 'maven-publish'
+    id "com.gradle.plugin-publish" version "0.12.0"
+}
+```
+
+2.填写发布信息
+
+```
+//publish to gradle plugin portal
+pluginBundle {
+    website = 'https://github.com/liu-shichao/ament_gradle_plugin'
+    vcsUrl = 'https://github.com/liu-shichao/ament_gradle_plugin'
+    description = 'forked from ros2-java/ament_gradle_plugin'
+    tags = ['ament', 'rcljava', 'robotics', 'ros2']
+
+    plugins {
+        ament {
+            id = 'com.github.liu-shichao.gradles'
+            displayName = 'A Gradle plugin for building Java and Android-based ROS2 projects'
+        }
+    }
+}
+```
+
+3.执行发布task
+
+```
+./gradlew publishPlugins
+```
 
 
 
