@@ -50,8 +50,9 @@ publishing {
     }
 }
 
-然后会多出一个task，执行这个task
-./gradlew publishPluginMavenPublicationToMavenRepository 
+然后会多出一个task，执行这个task(一定要看清，不要选错了，这里因为选错了查了好久的原因)
+./gradlew publishHelloPublicationToMavenRepository
+
 
 ```
 
