@@ -1,3 +1,44 @@
+
+
+
+### 6.引入android依赖插件
+
+在为android编写gradle插件时候，需要依赖android的插件包，方法如下
+
+```
+repositories {
+    jcenter()
+    google()
+}
+
+dependencies {
+implementation 'com.android.tools.build:gradle:3.6.4'
+}
+```
+
+
+
+### 5.使用gradle插件
+1.引入库
+
+mavenLocal()是在本地查找，仓库位置/Users/liushichao/.m2/repository/
+```
+buildscript {
+  repositories {
+    google()
+    jcenter()
+    mavenCentral()
+    mavenLocal()
+      maven {
+          url("/Users/liushichao/workspace/gradle/ament_gradle_plugin_release/ament_gradle_plugin/repo")
+      }
+      maven {
+          url("https://plugins.gradle.org/m2/")
+      }
+
+  }
+```
+
 ### 4.发布gradle插件
 
 
