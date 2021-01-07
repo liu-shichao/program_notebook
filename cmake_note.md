@@ -1,4 +1,18 @@
-# 记录常用cmake命令
+### 11.cache
+
+作用，缓存变量的值，在整个项目的的编译中都可以读取，一次缓存，多次编译都能读取，这个是存在build目录下CMakeCache.txt文件中的
+
+通过set命令可以设置缓存，如果不加FORCE选项的话不会覆盖之前的值
+
+```
+  set(my_cache "lala" CACHE STRING "test cmake cache." FORCE)
+```
+通过unset可以删除这个缓存变量
+
+```
+unset(my_cache CACHE)
+```
+
 
 ### 10.find_package()
 作用：查找已经安装的包，首先在``${CMAKE_MODULE_PATH}``中查找，Findxxx.cmake，然后在``<CMAKE_ROOT>/share/cmake-x.y/Modules/``中查找Findxxx.cmake，如果这两个文件中都找不到Findxxx.cmake，则查找xxxConfig.cmake 或者xxx-config.cmake。
