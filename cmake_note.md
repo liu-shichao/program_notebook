@@ -86,6 +86,40 @@ make
         "which was specified when the 'rmw_implementation' package was built.")
 ```
 
+以下是全部的等级
+参考链接： https://cmake.org/cmake/help/latest/command/message.html
+```
+FATAL_ERROR
+CMake Error, stop processing and generation.
+
+SEND_ERROR
+CMake Error, continue processing, but skip generation.
+
+WARNING
+CMake Warning, continue processing.
+
+AUTHOR_WARNING
+CMake Warning (dev), continue processing.
+
+DEPRECATION
+CMake Deprecation Error or Warning if variable CMAKE_ERROR_DEPRECATED or CMAKE_WARN_DEPRECATED is enabled, respectively, else no message.
+
+(none) or NOTICE
+Important message printed to stderr to attract user’s attention.
+
+STATUS
+The main interesting messages that project users might be interested in. Ideally these should be concise, no more than a single line, but still informative.
+
+VERBOSE
+Detailed informational messages intended for project users. These messages should provide additional details that won’t be of interest in most cases, but which may be useful to those building the project when they want deeper insight into what’s happening.
+
+DEBUG
+Detailed informational messages intended for developers working on the project itself as opposed to users who just want to build it. These messages will not typically be of interest to other users building the project and will often be closely related to internal implementation details.
+
+TRACE
+Fine-grained messages with very low-level implementation details. Messages using this log level would normally only be temporary and would expect to be removed before releasing the project, packaging up the files, etc.
+```
+
 
 ### 6. add_dependencies()
 
