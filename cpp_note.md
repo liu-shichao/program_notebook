@@ -21,7 +21,7 @@ cpptest
 |---CMakeLists.txt
 ```
 
-``include1/same_name.hpp`` 中内容如下
+``include_1/same_name.hpp`` 中内容如下
 
 ```
 struct cat{
@@ -30,7 +30,7 @@ struct cat{
 
 ```
 
-``include2/same_name.hpp`` 中内容如下
+``include_2/same_name.hpp`` 中内容如下
 
 ```
 struct dog{
