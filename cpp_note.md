@@ -1,3 +1,110 @@
+### 15.同名的头文件
+如果搜索路径中包含两个同名的头文件，这时候只会包含第一个搜索到的头文件。示例如下
+
+```
+目录结构
+
+cpptest
+|
+|---build
+|
+|---include1
+|   |
+|   |---same_name.hpp
+|
+|---include2
+|   |
+|   |---same_name.hpp
+|
+|---main.cpp
+|
+|---CMakeLists.txt
+```
+
+``include1/same_name.hpp`` 中内容如下
+
+```
+struct cat{
+  int age;
+};
+
+```
+
+``include2/same_name.hpp`` 中内容如下
+
+```
+struct dog{
+  int age;
+};
+
+```
+
+``CMakeLists.txt``内容如下
+
+```
+project(demo)
+set(CMAKE_CXX_STANDARD 11)
+
+add_executable(
+  ${PROJECT_NAME}
+  main.cpp)
+
+target_include_directories(
+  ${PROJECT_NAME}
+  PUBLIC
+  include_2
+  include_1
+)
+```
+
+``main.cpp``内容如下
+
+```
+#include <iostream>
+using namespace std;
+#include "same_name.hpp"
+
+int main(int argc, char* argv[]) {
+  cat c;
+  c.age = 1;
+  dog d;
+  d.age = 2;
+  cout << d.age << endl;
+}
+```
+
+这时候编译会报错如下
+
+```
+/Users/liushichao/Exercise/cpp/test_cpp/main.cpp:6:3: error: unknown type name 'cat'
+```
+
+调整``CMakeLists.txt``内容如下
+
+```
+project(demo)
+set(CMAKE_CXX_STANDARD 11)
+
+add_executable(
+  ${PROJECT_NAME}
+  main.cpp)
+
+target_include_directories(
+  ${PROJECT_NAME}
+  PUBLIC
+  include_1
+  include_2
+)
+```
+
+这时候编译会报错如下
+
+```
+/Users/liushichao/Exercise/cpp/test_cpp/main.cpp:8:3: error: unknown type name 'dog'
+```
+
+
+
 ### 14.可变参数数模板 
 
 1.递归展开参数包
