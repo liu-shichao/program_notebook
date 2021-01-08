@@ -8,11 +8,11 @@ cpptest
 |
 |---build
 |
-|---include1
+|---include_1
 |   |
 |   |---same_name.hpp
 |
-|---include2
+|---include_2
 |   |
 |   |---same_name.hpp
 |
@@ -102,6 +102,42 @@ target_include_directories(
 ```
 /Users/liushichao/Exercise/cpp/test_cpp/main.cpp:8:3: error: unknown type name 'dog'
 ```
+
+调整``CMakeLists.txt``内容如下
+
+```
+project(demo)
+set(CMAKE_CXX_STANDARD 11)
+
+add_executable(
+  ${PROJECT_NAME}
+  main.cpp)
+
+target_include_directories(
+  ${PROJECT_NAME}
+  PUBLIC
+)
+```
+
+``main.cpp``内容如下
+
+```
+#include <iostream>
+using namespace std;
+#include "include_1/same_name.hpp"
+#include "include_2/same_name.hpp"
+
+int main(int argc, char* argv[]) {
+  cat c;
+  c.age = 1;
+  dog d;
+  d.age = 2;
+  cout << d.age << endl;
+
+}
+```
+
+这样就可以运行成功了。
 
 
 
