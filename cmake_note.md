@@ -1,3 +1,20 @@
+### 12.generator expresion
+
+参考链接： https://cmake.org/cmake/help/latest/manual/cmake-generator-expressions.7.html#string-valued-generator-expressions
+
+表达式的样式 ``$<...>``
+
+调试方法
+
+因为生成表达式是在编译阶段生成的，不是在执行cmake阶段生成的，所以不能用message显示，可以用下边的方法显示
+
+```
+add_custom_target(genexdebug COMMAND ${CMAKE_COMMAND} -E echo "$<...>")
+或者
+file(GENERATE OUTPUT filename CONTENT "$<...>")
+```
+
+
 ### 11.cache
 
 作用，缓存变量的值，在整个项目的的编译中都可以读取，一次缓存，多次编译都能读取，这个是存在build目录下CMakeCache.txt文件中的
