@@ -1,3 +1,12 @@
+### 13.指定安装目录
+
+```
+cmake -DCMAKE_INSTALL_PREFIX=/usr .. 
+
+```
+
+
+
 ### 12.generator expresion
 
 参考链接： https://cmake.org/cmake/help/latest/manual/cmake-generator-expressions.7.html#string-valued-generator-expressions
