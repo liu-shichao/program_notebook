@@ -1,3 +1,42 @@
+
+### 设置安卓签名文件
+
+1.在android studio中点击菜单栏中的build - Generate Signed Bundle /APK...
+
+2.在弹出的对话框中选择APK，点击next
+
+3.点击Create new...
+
+4.选择要存放的密钥的位置，例如``/User/liushichao/dexxx.keystore``
+
+5.然后填写密码，这一页的都要填满，要记住密码，后边要用，填写好后点ok，我这里会弹一个报错对话框，直接关了就行
+
+6.将dexxx.keystore拷贝到工程中app模块目录下
+
+7.修改app目录下的build.gradle,添加如下内容，然后正常编译就好了。
+
+```
+android {
+    ...
+    signingConfigs {
+        release {
+            storeFile file("./dexxx.keystore")
+            storePassword "woshimima"
+            keyAlias "sdfff"
+            keyPassword "wohaishimima"
+        }
+        debug {
+            storeFile file("./dexxx.keystore")
+            storePassword "woshimima"
+            keyAlias "sdfff"
+            keyPassword "wohaishimima"
+        }
+    }
+}
+```
+
+
+
 ### android Timer中不能直接修改UI界面
 
 要调用runOnUiThread
