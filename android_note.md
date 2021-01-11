@@ -1,5 +1,5 @@
 
-### 设置安卓签名文件
+### 3.设置安卓签名文件
 
 1.在android studio中点击菜单栏中的build - Generate Signed Bundle /APK...
 
@@ -37,7 +37,7 @@ android {
 
 
 
-### android Timer中不能直接修改UI界面
+### 2.android Timer中不能直接修改UI界面
 
 要调用runOnUiThread
 
@@ -60,7 +60,7 @@ android {
 也可以调用view类的post方法，直接将Runnable添加到ui线程的消息队列中
 
 
-### 修改appId
+### 1.修改appId
 
 ```
 android {
@@ -77,7 +77,7 @@ android {
 ```
     
     
-### adb命令
+### 4.adb命令
 
 1.结束app进程
 
@@ -86,7 +86,7 @@ com.liushichao.myapp是appid，可以用adb shell top命令查看
 adb shell am force-stop com.liushichao.myapp
 ``
 
-### android请求权限
+### 5.android请求权限
 
 ```
 1.需要手动添加androidmanifest.xml中
