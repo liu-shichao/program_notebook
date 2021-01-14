@@ -1,3 +1,14 @@
+### 5.根据proto生成c++类文件的方法，及注意事项
+
+第一行的指令 ``  `which grpc_cpp_plugin`  `` 不是单引号'，而是左上角的 `` ` `` 号
+
+```
+protoc -I ../../protos --grpc_out=. --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` ../../protos/route_guide.proto
+protoc -I ../../protos --cpp_out=. ../../protos/route_guide.proto
+```
+
+
+
 ### 4.grpc编译报错的解决方法 thread链接错误
 
 起因：今天将build_isolated中的my_package文件删了，然后重新编译的时候提示报错了
