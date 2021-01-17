@@ -1,3 +1,8 @@
+### 16.CMAKE_CURRENT_LIST_DIR 当前正在处理的文件所在的文件夹的全路径（绝对路径）
+
+### 15.CMAKE_CURRENT_LIST_FILE 当前正在处理的文件的全路径（绝对路径）
+
+
 ### 14.make打印过程中的信息
 
 ```
