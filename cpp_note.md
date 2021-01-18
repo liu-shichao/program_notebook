@@ -1,3 +1,13 @@
+### 16.待查。。。
+
+```
+std::atomic_bool                             shutdownFlag_;
+while (!shutdownFlag_.load(std::memory_order_acquire)) {
+
+}
+
+```
+
 ### 15.同名的头文件
 如果搜索路径中包含两个同名的头文件，这时候只会包含第一个搜索到的头文件。示例如下
 
