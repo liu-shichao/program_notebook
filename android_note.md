@@ -47,6 +47,8 @@ android {
     }
 }
 ```
+8.生成的apk文件在app/debug目录下
+
 
 
 
