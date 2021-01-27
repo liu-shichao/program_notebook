@@ -1,6 +1,7 @@
-### 18. target_lib_directory
+### 18. target_link_directories
 
 可以配置库文件的查找目录，跟target_include_directories的效果类似
+
 
 
 ### 17.file命令
