@@ -1,3 +1,19 @@
+### 6.编译错误
+
+'google/protobuf/port_def.inc' file not found
+
+错误原因：
+
+没有指定库的编译安装的路径
+
+解决方法：
+
+```
+cmake -DCMAKE_PREFIX_PATH=/Users/liushichao/grpc/mac_install ..
+```
+
+
+
 ### 5.根据proto生成c++类文件的方法，及注意事项
 
 第一行的指令 ``  `which grpc_cpp_plugin`  `` 不是单引号'，而是左上角的 `` ` `` 号
