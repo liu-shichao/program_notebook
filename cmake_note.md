@@ -1,3 +1,22 @@
+### 17.file命令
+
+file命令可以使用通配符表达式方便的获取某一个文件夹下的全部源文件，例如
+
+```
+file(GLOB_RECURSE GRPC_SOURCES_FILE
+  src/protobuf/*.cc
+  src/rpc/*.cc
+)
+
+
+add_library(
+  ${PROJECT_NAME}
+  SHARED
+  ${GRPC_SOURCES_FILE})
+
+```
+
+
 ### 16.CMAKE_CURRENT_LIST_DIR 当前正在处理的文件所在的文件夹的全路径（绝对路径）
 
 ### 15.CMAKE_CURRENT_LIST_FILE 当前正在处理的文件的全路径（绝对路径）
