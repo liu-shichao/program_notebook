@@ -1,3 +1,21 @@
+### 3.本地cmake加入opencv库
+
+```
+find_package(OpenCV REQUIRED)  #注意大小写
+target_include_directories(
+  ${PROJECT_NAME}
+  PUBLIC
+  ${OpenCV_INCLUDE_DIRS}
+)
+
+target_link_libraries(
+  ${PROJECT_NAME}
+  ${OpenCV_LIBS}
+)
+
+```
+
+
 ### 2.编译安卓ndk库
 
 从github下载源码，进入到源码跟目录，创建build文件夹，进入build文件夹，执行下边的编译指令
