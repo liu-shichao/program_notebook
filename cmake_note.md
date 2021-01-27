@@ -1,3 +1,8 @@
+### 18. target_lib_directory
+
+可以配置库文件的查找目录，跟target_include_directories的效果类似
+
+
 ### 17.file命令
 
 file命令可以使用通配符表达式方便的获取某一个文件夹下的全部源文件，例如
