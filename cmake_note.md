@@ -1,3 +1,25 @@
+### 19. add_subdirectory用法
+
+直接指定要链接的子目录文件夹的相对路径即可，但是还要自己指定头文件
+```
+add_subdirectory(
+  lib/sgmnv_tool
+)
+
+target_include_directories(
+  ${PROJECT_NAME}
+  PUBLIC
+  lib/sgmnv_tool/include
+)
+
+target_link_libraries(
+  ${PROJECT_NAME}
+  sgmnv_tool
+)
+```
+
+
+
 ### 18. target_link_directories
 
 可以配置库文件的查找目录，跟target_include_directories的效果类似
