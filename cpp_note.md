@@ -1,3 +1,47 @@
+### 17.虚析构的作用
+
+```
+1.通过父类指针释放所指向的子类。
+
+class Animal {
+  vitual ~Animal() {
+    std::cout << "delete animal.." << std::endl;
+  }
+}
+
+class Dog : public Animal {
+  ~Dog() {
+    std::cout << "delete dog..." << std::endl;
+  };
+};
+
+Animal* animal = new Dog();
+
+delete animal;
+
+```
+如上执行会输出
+
+```
+delete dog...
+delete animal..
+```
+
+如果去掉了vitual修饰~Animal()，则会只输出如下
+
+
+```
+delete animal..
+```
+
+因为父类的构造函数和析构函数不能被子类继承，但是会形成多态，
+
+所以当父类定义成虚析构函数的时候，会先动态调用子类的析构函数，
+
+然后由于delete的机制，会接着调用父类的析构函数
+
+
+
 ### 16.待查。。。
 
 ```
