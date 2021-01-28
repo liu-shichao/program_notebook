@@ -1,3 +1,37 @@
+### 4.vscode提示protobuffer中的类
+
+问题描述： vscode可以正常提示c++的相关提示，但是不能提示pb.h头文件中定义的pb类中的成员函数或者变量。
+
+问题原因：vscode默认只从当前工作空间中查找所引用的类，虽然proto转换的pb.h在工作空间中，但是pb.h依赖的protobuf的库的头文件没有在工作空间中，这样就会导致无法解析当前工作空间中的pb.h文件，所以涉及到的类中的成员函数和变量都不会提示。
+
+解决方法：
+```
+1.按下 Ctrl+Shift+P
+2.输入edit或者configuration，选择”C/Cpp:Edit Configurations(JSON)”
+3.编辑打开的c_cpp_properties.json文件，在includePath中加入pb库所在的路径，示例如下
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "/Users/liushichao/grpc/mac_install/**",
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "macFrameworkPath": [],
+            "compilerPath": "/usr/local/bin/gcc-10",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "macos-gcc-x64"
+        }
+    ],
+    "version": 4
+}
+
+
+```
+
+
 ### 3.vscode c++无法跳转到定义
 
 ```
