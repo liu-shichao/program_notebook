@@ -1,7 +1,14 @@
 ### 5.vlc插件的退出卡死问题
 
 ```
-MediaPlayer对象的release需要在其他的线程中调用，不然会卡住。
+1.停止播放需要调先将回掉函数设为空，然后在调用MediaPlayer对象的release回掉函数，不要调用stop(),
+    //mMediaPlayer.stop();
+    mMediaPlayer.setVideoCallback(mByteBuffer,null);
+    mMediaPlayer.release();
+    
+    mLibVLC.release();
+
+2.MediaPlayer对象的release需要在其他的线程中调用，不要在onDisplay回掉函数中调用，不然会卡住。
 
 ```
 
