@@ -1,3 +1,67 @@
+### 5.git误提交到HEAD detached分支，切换其他分支后导致代码丢失的解决办法
+问题描述：1.没有注意当前处于HEAD detached分支，将代码都提交到了这个分支上，当切换回master分支后，提交记录都不见了，解决方法如下。
+
+解决方法：
+
+1. 执行 ``git reflog``，能够查看到HEAD detached分支的提交名字,示例如下
+```
+liushichao@ShichaodeMacBook-Pro core % git reflog    
+8e310b4 (HEAD -> master, origin/master, origin/HEAD) HEAD@{0}: checkout: moving from 1017f1ee6ce9a434a723de9c2ad4e52eabca267e to master
+1017f1e HEAD@{1}: commit: 插值模块增加速度参数
+be3959d HEAD@{2}: commit: 修改速度为参数传递字符串
+8e310b4 (HEAD -> master, origin/master, origin/HEAD) HEAD@{3}: checkout: moving from 01b0d7489a80548c63021b050bddfaedee304481 to 8e310b40cd4cee5893b57cab92d412002d7cd23b
+01b0d74 HEAD@{4}: commit: 传递gps相关信息
+8e310b4 (HEAD -> master, origin/master, origin/HEAD) HEAD@{5}: checkout: moving from 278f1f051f41e5d08ab87b2092411462e2becd5d to 8e310b40cd4cee5893b57cab92d412002d7cd23b
+278f1f0 HEAD@{6}: checkout: moving from master to 278f1f051f41e5d08ab87b2092411462e2becd5d
+8e310b4 (HEAD -> master, origin/master, origin/HEAD) HEAD@{7}: commit: 增加实例化对象索引id,用来查找最后一帧缓存的图像
+278f1f0 HEAD@{8}: checkout: moving from a150b66d85a6f0b26cc21c2013002c62ffe6170c to master
+a150b66 HEAD@{9}: checkout: moving from master to a150b66d85a6f0b26cc21c2013002c62ffe6170c
+278f1f0 HEAD@{10}: pull origin master: Fast-forward
+b30b1c2 HEAD@{11}: pull origin master: Fast-forward
+81a731e HEAD@{12}: pull origin master: Fast-forward
+a150b66 HEAD@{13}: checkout: moving from 748bb9c1a89f405d47a8136c36527699792aaa82 to master
+748bb9c HEAD@{14}: checkout: moving from master to 748bb9c1a89f405d47a8136c36527699792aaa82
+a150b66 HEAD@{15}: clone: from https://git.sogou-inc.com/fanyongxing/Mapping_Reconstruction
+```
+2.切换到最后一次的HEAD提交上 ``git checkout 1017f1e``,示例如下
+```
+liushichao@ShichaodeMacBook-Pro core % git checkout 1017f1e
+Note: switching to '1017f1e'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 1017f1e 插值模块增加速度参数
+```
+
+3.现在已经找回丢失的提交了，下边新建一个分支名字叫diff，叫什么名字都行，将这个detached的HEAD分支保存起来，如下
+
+```
+liushichao@ShichaodeMacBook-Pro core % git checkout -b diff
+Switched to a new branch 'diff'
+```
+
+4.最后将这个分支合并到master分支
+```
+git checkout master
+
+git merge diff
+```
+5.完成。
+
+
 ### 4.git将当前修改的内容移动到别的分支
 
 方法1. 当前的修改不要提交，然后新建一个分支，切换到新分支的时候会发现这些修改的内容都被带过来了，再切换回原来分支查看修改还在，这是两个分支都有这些修改，然后再切换到新的分支进行提交，这时候原来的分支就看不见这些修改了。
