@@ -1,3 +1,15 @@
+### 6.git子模块的添加
+
+1.添加，其中url是git的网址，path是新建的文件夹的相对git的根目录的路径。
+```
+git submodule add url path
+```
+2.提交
+```
+git commit -m "xxx"
+```
+
+
 ### 5.git误提交到HEAD detached分支，切换其他分支后导致代码丢失的解决办法
 问题描述：1.没有注意当前处于HEAD detached分支，将代码都提交到了这个分支上，当切换回master分支后，提交记录都不见了，解决方法如下。
 
