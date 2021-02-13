@@ -1,3 +1,19 @@
+### 9.git log --oneline --all --graph -n4
+
+```
+--oneline log采用一行的方式显示
+
+--all 显示所有的分支的历史提交
+
+--graph  采用图形的方式显示分支结构
+
+--n4 显示最近的4条历史记录
+
+```
+
+### 8.git mv xx xx
+重命名的方法，可以直接commit
+
 ### 7.git add -u
 
 ```
