@@ -117,6 +117,30 @@ xxx_DEFINITIONS
 ```
 
 
+### 9.1 add_definitions
+
+作用：在原文件中定义指定的宏，示例如下
+
+```
+ OPTION(USE_MACRO
+
+  "Build the project using macro"
+
+  OFF)
+
+if(USE_MACRO)
+
+ add_definitions("-DUSE_MACRO")
+
+endif(USE_MACRO)
+```
+使用时
+```
+开启：　cmake 　-DUSE_MACRO＝ON ..
+
+关闭：　cmake 　-DUSE_MACRO＝OFF ..
+```
+
 
 ### 9. target_compile_definitions
 
