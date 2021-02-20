@@ -1,5 +1,7 @@
 ### 19.不支持模版别名的处理办法
 
+__cpp_user_defined_literals测试，从gcc4.7版本开始支持模板别名，但是qnx的libc++的__config却检测到gcc就认为没有模板别名的特性
+
 参考标准库中libc++库中memory头文件中的一段代码
 ```
 #ifndef _LIBCPP_HAS_NO_TEMPLATE_ALIASES
