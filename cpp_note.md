@@ -1,3 +1,20 @@
+### 19.不支持模版别名的处理办法
+
+参考标准库中libc++库中memory头文件中的一段代码
+```
+#ifndef _LIBCPP_HAS_NO_TEMPLATE_ALIASES
+    template <class _Tp> using rebind_alloc =
+                  typename __allocator_traits_rebind<allocator_type, _Tp>::type;
+    template <class _Tp> using rebind_traits = allocator_traits<rebind_alloc<_Tp>>;
+#else  // _LIBCPP_HAS_NO_TEMPLATE_ALIASES
+    template <class _Tp> struct rebind_alloc
+        {typedef typename __allocator_traits_rebind<allocator_type, _Tp>::type other;};
+    template <class _Tp> struct rebind_traits
+        {typedef allocator_traits<typename rebind_alloc<_Tp>::other> other;};
+#endif  // _LIBCPP_HAS_NO_TEMPLATE_ALIASES
+
+```
+
 ### 18.libstdc++/libc++
 
 ```
