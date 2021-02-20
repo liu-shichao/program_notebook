@@ -10,7 +10,7 @@ libc++包含两个库 libc++.so(接口层) libc++abi.so(实现层)
 libstdc++的头文件位置 /usr/include/c++/5.4/  其中5.4位gcc编译器的版本号
 libc++头文件的位置 /usr/include/c++/v1/
 
-配置编译选项：
+配置编译选项:【注意】这个是配置选择头文件的
 
 -stdlib=libc++ 
 -stdlib=libstdc++
