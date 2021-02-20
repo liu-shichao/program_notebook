@@ -2,6 +2,8 @@
 
 __cpp_user_defined_literals测试，从gcc4.7版本开始支持模板别名，但是qnx的libc++的__config却检测到gcc就认为没有模板别名的特性
 
+所以这里有个bug，是libc++库对gcc编译的配置选项出现了问题
+
 参考标准库中libc++库中memory头文件中的一段代码
 ```
 #ifndef _LIBCPP_HAS_NO_TEMPLATE_ALIASES
