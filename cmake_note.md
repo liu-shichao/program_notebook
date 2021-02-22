@@ -1,3 +1,12 @@
+### 20.判断是否为交叉编译 
+```
+if(CMAKE_CROSSCOMPILING)
+   #交叉编译
+else()
+   #非交叉编译
+endif()
+```
+
 ### 19. add_subdirectory用法
 
 直接指定要链接的子目录文件夹的相对路径即可，但是还要自己指定头文件
