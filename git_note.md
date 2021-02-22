@@ -1,6 +1,9 @@
 ### 10.gitk 可视化工具
 
-
+```
+显示全部分支的提交记录（本地分支 + 远程分支）
+gitk --all
+```
 
 
 ### 9.git log --oneline --all --graph -n4
