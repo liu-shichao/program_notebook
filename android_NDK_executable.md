@@ -2,6 +2,8 @@
 
 [出处](https://developer.android.com/ndk/guides/cmake#命令行)
 
+注意： ANDROID_NATIVE_API_LEVEL=28这个参数很重要，如果opencv库使用这个编译的，编译app时却用ANDROID_NATIVE_API_LEVEL=21就会导致opencv中的一些库提示某些函数找不到定义。
+
 
 方式1.编译动态连接的可执行程序
 
