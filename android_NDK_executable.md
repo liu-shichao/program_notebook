@@ -8,7 +8,7 @@
 ```
 cmake .. -DCMAKE_TOOLCHAIN_FILE=/Users/liushichao/Library/Android/sdk/ndk/21.0.6113669/build/cmake/android.toolchain.cmake \
 	-DANDROID_ABI=armeabi-v7a \
-	-DANDROID_NATIVE_API_LEVEL=21 \
+	-DANDROID_NATIVE_API_LEVEL=28 \
 	-DANDROID_STL=c++_shared \
 ```
 
@@ -17,7 +17,7 @@ cmake .. -DCMAKE_TOOLCHAIN_FILE=/Users/liushichao/Library/Android/sdk/ndk/21.0.6
 ```
 cmake .. -DCMAKE_TOOLCHAIN_FILE=/Users/liushichao/Library/Android/sdk/ndk/21.0.6113669/build/cmake/android.toolchain.cmake \
 	-DANDROID_ABI=armeabi-v7a \
-	-DANDROID_NATIVE_API_LEVEL=21 \
+	-DANDROID_NATIVE_API_LEVEL=28 \
 	-DANDROID_STL=c++_static \
 ```
 
