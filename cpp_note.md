@@ -1,3 +1,17 @@
+### 20.判断是否有宏定义
+
+```
+#ifdef PLATFORM_QNX  
+  int platform = 1;
+#elif defined PLATFORM_ANDROID
+  int platform = 2;
+#else
+  int platform = 3;
+#endif
+
+```
+
+
 ### 19.不支持模版别名的处理办法
 
 __cpp_user_defined_literals测试，从gcc4.7版本开始支持模板别名，但是qnx的libc++的__config却检测到gcc就认为没有模板别名的特性
