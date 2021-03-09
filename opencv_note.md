@@ -23,7 +23,7 @@ target_link_libraries(
 ```
 export ANDROID_NDK=/Users/liushichao/Library/Android/sdk/ndk/21.0.6113669
 export ANDROID_ABI=armeabi-v7a
-export ANDROID_NATIVE_API_LEVEL=android-24
+export ANDROID_NATIVE_API_LEVEL=android-28
 export ANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-clang
 
 cmake			       \
@@ -40,6 +40,7 @@ cmake			       \
         -D WITH_MATLAB=OFF \
         -D BUILD_ANDROID_EXAMPLES=OFF \
         -D BUILD_DOCS=OFF \
+        -D CMAKE_BUILD_TYPE=Release \
         -D BUILD_PERF_TESTS=OFF \
         -D BUILD_TESTS=OFF \
         -DCMAKE_INSTALL_PREFIX="/Users/liushichao/source/opencv/install" \
