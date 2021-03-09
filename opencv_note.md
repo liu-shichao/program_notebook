@@ -43,7 +43,7 @@ cmake			       \
         -D CMAKE_BUILD_TYPE=Release \
         -D BUILD_PERF_TESTS=OFF \
         -D BUILD_TESTS=OFF \
-        -DCMAKE_INSTALL_PREFIX="/Users/liushichao/source/opencv/install" \
+        -DCMAKE_INSTALL_PREFIX="/Users/liushichao/source/opencv/install_ndk" \
   ..
 
 make -j8
