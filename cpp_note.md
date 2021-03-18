@@ -1,3 +1,29 @@
+### 21.split函数的实现
+
+```
+std::vector<std::string> split(const std::string &str, const std::string &sep)
+{
+    std::string::size_type pos;
+    std::vector<std::string> result;
+
+    std::string newstr =  str + sep;
+    size_t size=newstr.size();
+
+    for(size_t i=0; i<size; ++i)
+    {
+        pos=newstr.find(sep,i);
+        if(pos<size)
+        {
+            std::string s = newstr.substr(i,pos-i);
+            result.push_back(s);
+            i=pos+sep.size()-1;
+        }
+    }
+    return result;
+}
+```
+
+
 ### 20.判断是否有宏定义
 
 ```
