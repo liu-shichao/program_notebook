@@ -1,3 +1,11 @@
+### 21.在源文件中检查某个符号是否是函数/变量/宏定义
+```
+在c中用
+CheckSymbolExists 
+在cpp中用
+CheckCXXSymbolExists
+```
+
 ### 20.判断是否为交叉编译 
 ```
 if(CMAKE_CROSSCOMPILING)
