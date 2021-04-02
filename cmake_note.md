@@ -195,6 +195,13 @@ int main()
 
 -DCMAKE_BUILD_TYPE=Release
 ```
+指定好CMAKE_BUILD_TYPE后，还要指定CMAKE_CXX_FLAGS_RELEASE或者CMAKE_CXX_FLAGS_DEBUG
+```
+# 设置Release版本的编译选项
+SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+# 设置Debug版本的编译选项
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -g -Wall")
+```
 
 例子：
 
