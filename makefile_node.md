@@ -99,3 +99,116 @@ endif
 ```
 .PHONY:clean
 ```
+
+### 函数
+
+函数的调用
+
+```
+$(<function> <arguments>)     或者  ${<function> <arguments>}
+```
+
+function是函数名，arguments是参数， 参数需要用逗号分隔，参数和函数名之间用空格分隔。
+
+1.patsubst 字符串替换函数
+
+```
+$(patsubst <pattern>,<replacement>,<text>)
+```
+
+从text中查找符合模式pattern的字符用replacement进行替换,实例：
+
+```
+OBJ=$(patsubst %.c,%.o,1.c 2.c 3.c)
+all:
+  @echo $(OBJ)
+```
+
+输出结果：
+
+```
+1.o 2.o 3.o
+```
+
+2.sbust  字符串替换函数
+
+```
+$(subst <from>,<to>,<text>)
+```
+
+把text中的from替换成to
+
+3.strip 去空格函数，去掉string开头和结尾的空格，并将中间的多个空格合并为一个空格
+
+```
+$(strip <string>)
+```
+
+4.findstring 查找子字符串， 查找in中的find，如果目标字符串存在，返回目标字符串，不存在返回空
+
+```
+$(findstring <find>,<in>)
+```
+例：
+
+```
+OBJ=$(findstring a,a b c)
+all:
+  @echo $(OBJ)
+```
+显示结果为``a``
+
+
+5. filter 过滤函数， 过滤出text中符合模式pattern的字符串，可以有多个pattern，返回值为过滤后的字符串
+
+```
+$(filter <pattern>,<text>)
+```
+
+6.filter-out反过滤函数，去除符合模式pattern的字符串，返回保留的字符串
+
+```
+$(filter-out <pattern>,<text>)
+```
+
+7.sort排序函数， 将list中的单词排序（升序），返回排好序的字符串
+
+```
+$(sort <list>)
+```
+
+8.word 取单词函数，去除text中的第n的单词，返回去除的第n个单词，从1开始计数
+
+```
+OBJ=$(word 2,1.c 2.c 3.c)
+all:
+  @echo $(OBJ)
+```
+返回``2.c``
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
