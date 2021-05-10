@@ -48,6 +48,7 @@ vpath是需要指定要搜索的文件，用法如下
 
 ```
 vpath test.c src car  #在src和car目录下寻找test.c文件
+vpath %.c src car     #在src和car目录下查找全部的.c文件
 vpath teset.c         #清除test.c的搜索目录
 vpath                 #清除所有已被设置的文件搜索路径
 
