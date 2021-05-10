@@ -53,3 +53,31 @@ vpath teset.c         #清除test.c的搜索目录
 vpath                 #清除所有已被设置的文件搜索路径
 
 ```
+
+### 条件分支语句
+
+注意：条件语句只能用于控制make实际执行的Makefile文件部分，不能控制规则的shell命令执行的过程。
+
+1.ifeq
+
+```
+ifeq ($(cc),gcc)
+  libs=$(libs_for_gcc)
+else
+  libs=$(normal_libs)
+endif
+```
+
+2.ifdef
+
+```
+bar =
+foo = $(bar)
+all:
+ifdef foo
+  @echo yes
+else
+  @echo no
+endif
+
+```
