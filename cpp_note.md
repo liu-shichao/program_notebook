@@ -1,11 +1,25 @@
 ### 22.cpp二进制形式打开文件
 
 ```
-std::ifstream file(input_bmp_name, std::ios::in | std::ios::binary);
+
+int begin, end;
+
+  std::ifstream file(input_bmp_name, std::ios::in | std::ios::binary);
   if (!file) {
     LOG(FATAL) << "input file " << input_bmp_name << " not found";
     exit(-1);
   }
+
+  begin = file.tellg();
+  file.seekg(0, std::ios::end);
+  end = file.tellg();
+  size_t len = end - begin;
+
+  if (s->verbose) LOG(INFO) << "len: " << len;
+
+  std::vector<uint8_t> img_bytes(len);
+  file.seekg(0, std::ios::beg);
+  file.read(reinterpret_cast<char*>(img_bytes.data()), len);
 ```
 
 ### 21.split函数的实现
