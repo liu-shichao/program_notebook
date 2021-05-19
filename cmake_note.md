@@ -11,6 +11,29 @@ make
 
 cmakelist中可以用find_package查找
 
+```
+target_include_directories(
+  ${PROJECT_NAME}
+  PUBLIC
+  src/
+  src/rpc
+  src/protobuf/
+  src/grpcs/
+  ${OpenCV_INCLUDE_DIRS}
+  lib/sgmnv_tool/include
+)
+
+target_link_libraries(
+  ${PROJECT_NAME}
+  protobuf::libprotobuf
+  gRPC::grpc++_reflection
+  gRPC::grpc++
+  ${OpenCV_LIBS}
+  # sgmnv_tool
+)
+```
+
+
 ### 21.在源文件中检查某个符号是否是函数/变量/宏定义
 ```
 在c中用
