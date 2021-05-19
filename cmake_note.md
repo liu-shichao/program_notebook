@@ -1,3 +1,16 @@
+### 22.指定第三方库的查找路径
+
+可以使用CMAKE_PREFIX_PATH变量指定第三方库的查找路径（13.步中指定的安装路径）
+
+```
+cd build
+cmake -DCMAKE_PREFIX_PATH=/Users/liushichao/grpc/mac_install ..
+make
+
+```
+
+cmakelist中可以用find_package查找
+
 ### 21.在源文件中检查某个符号是否是函数/变量/宏定义
 ```
 在c中用
