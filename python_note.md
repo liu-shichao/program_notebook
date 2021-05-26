@@ -1,3 +1,11 @@
+### 3.glob通配符获取文件列表
+
+```
+glob.glob("./*.jpg")
+获取当前目录下的jpg文件列表
+```
+
+
 ### 2.__init__.py的作用
 
 参考链接 https://www.cnblogs.com/lands-ljk/p/5880483.html
