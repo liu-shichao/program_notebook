@@ -1,3 +1,11 @@
+### [更新] android免root运行native程序
+
+```
+adb shell
+cd /data/local/tmp
+这个目录里可以上传native程序，有可执行权限
+```
+
 ### ndk编译cpp文件为可执行程序
 
 [出处](https://developer.android.com/ndk/guides/cmake#命令行)
