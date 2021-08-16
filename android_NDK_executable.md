@@ -1,4 +1,20 @@
-### [更新] android免root运行native程序
+### android native makedir
+
+其中文件权限参数一定不能忽略前边的0，不能写成777，一定要写成0777
+
+```
+bool make_dir(const char* file_name) {
+	if (0 == mkdir(file_name,0777)) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+```
+
+
+### android免root运行native程序
 
 ```
 adb shell
