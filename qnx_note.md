@@ -1,3 +1,11 @@
+### 3.ide快捷键
+```
+菜单栏-momentics-preferences-General-Keys可以查看设置的全部快捷键
+其中字体放大缩小快捷键在最下方
+command + 放大（需要按住command shift +）
+command - 缩小
+```
+
 ### 2.ide调试动态库
 
 在ide中调试动态库，需要确保以下几项配置都正确：
