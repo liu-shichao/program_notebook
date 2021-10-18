@@ -1,3 +1,7 @@
+### 24.打印中间过程信息
+
+-DCMAKE_VERBOSE_MAKEFILE=ON
+
 ### 23.查找安装包
 
 pkg_check_modules()
