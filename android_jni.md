@@ -1,4 +1,4 @@
-jni tool
+#### 使用 javah 生成 jni 接口
 
 1.android studio中创建java的类，编写好java函数，前边加上native修饰符
 
