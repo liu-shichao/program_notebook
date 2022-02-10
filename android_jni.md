@@ -10,7 +10,5 @@ app/build/intermediates/javac/debug/classes
 
 javah -classpath . com.sogo.map.streetviewjni.StreetViewApi
 
-
-
-如果想指定头文件的生成路径，按下边的命令即可
-
+4.如果想指定头文件的生成路径，需要增加一个 -d 参数，按下边的命令即可(在根目录中运行)
+javah -classpath app/build/intermediates/javac/debug/classes -d app/src/main/cpp com.sogo.map.streetviewjni.StreetViewApi
