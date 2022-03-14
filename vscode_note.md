@@ -1,3 +1,10 @@
+### 5.vscode 远程调试传入参数的方法
+vscode的debug有两种方式，一个是快速debug，这种不能传入参数，另一种是使用launch.json配置，这种可以传入参数
+
+在进行远程调试的时候，launch.json中的有个字段一定要设置为false，否则点击运行后没有反应，就是下边这个字段：
+
+`` "externalConsole": false, ``
+
 ### 4.vscode提示protobuffer中的类
 
 问题描述： vscode可以正常提示c++的相关提示，但是不能提示pb.h头文件中定义的pb类中的成员函数或者变量。
