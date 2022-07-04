@@ -1,3 +1,18 @@
+### 25.在cmake中引用动态库so文件
+参考：https://www.csdn.net/tags/MtjaEg0sNTY0OTYtYmxvZwO0O0OO0O0O.html
+```
+a、首先申明动态库的位置
+LINK_DIRECTORIES({your_library_path})
+例如：LINK_DIRECTORIES(/usr/local/lib)
+
+b、制定具体的动态库的名称
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} -l{library_name})
+
+例如：指定kafka的动态链接文件librdkafka.so
+
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} -lrdkafka++)
+```
+
 ### 24.打印中间过程信息
 
 -DCMAKE_VERBOSE_MAKEFILE=ON
