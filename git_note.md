@@ -1,3 +1,8 @@
+### 11.git强制添加被ignore忽略的文件
+```
+git add -f App.class
+```
+
 ### 10.gitk 可视化工具
 
 ```
