@@ -442,6 +442,8 @@ std::map是有序的，但是不是插入的顺序，而是按照key的值进行
 
 2.计时开始位置添加
 std::chrono::time_point<std::chrono::high_resolution_clock> time_begin = std::chrono::high_resolution_clock::now();
+或者
+std::chrono::high_resolution_clock::time_point time_begin = std::chrono::high_resolution_clock::now();
 
 3.计时结束位置添加
 long long eclipse_time = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - time_begin).count();
