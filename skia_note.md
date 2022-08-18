@@ -3,6 +3,7 @@
 静态库编译命令
 ```
 bin/gn gen out/Static --args='is_official_build=true skia_use_system_harfbuzz=false skia_use_system_libwebp=false skia_use_gl=false skia_use_system_icu=false'
+ninja -C out/Static
 ```
 
 查看编译参数
