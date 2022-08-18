@@ -945,7 +945,7 @@ int main()
 ### 动态库编译
 
 ```
-bin/gn gen out/Shared --args='is_official_build=true is_component_build=true skia_use_system_harfbuzz=false skia_use_system_libwebp=false skia_use_gl=false skia_use_system_icu=false'
+bin/gn gen out/Shared --args='is_official_build=true is_component_build=true skia_enable_svg=true skia_use_system_harfbuzz=false skia_use_system_libwebp=false skia_use_gl=false skia_use_system_icu=false'
 ninja -C out/Static
 ```
 
@@ -1338,7 +1338,9 @@ skia_enable_spirv_validation
       From //gn/skia.gni:127
 
 skia_enable_svg
-    Current value (from the default) = false
+    Current value = true
+      From //out/Shared/args.gn:3
+    Overridden from the default = false
       From //gn/skia.gni:31
 
 skia_enable_tools
@@ -1451,7 +1453,7 @@ skia_use_freetype_woff2
 
 skia_use_gl
     Current value = false
-      From //out/Shared/args.gn:5
+      From //out/Shared/args.gn:6
     Overridden from the default = true
       From //gn/skia.gni:53
 
@@ -1549,13 +1551,13 @@ skia_use_system_freetype2
 
 skia_use_system_harfbuzz
     Current value = false
-      From //out/Shared/args.gn:3
+      From //out/Shared/args.gn:4
     Overridden from the default = true
       From //third_party/harfbuzz/BUILD.gn:10
 
 skia_use_system_icu
     Current value = false
-      From //out/Shared/args.gn:6
+      From //out/Shared/args.gn:7
     Overridden from the default = true
       From //third_party/icu/BUILD.gn:11
 
@@ -1569,7 +1571,7 @@ skia_use_system_libpng
 
 skia_use_system_libwebp
     Current value = false
-      From //out/Shared/args.gn:4
+      From //out/Shared/args.gn:5
     Overridden from the default = true
       From //third_party/libwebp/BUILD.gn:7
 
