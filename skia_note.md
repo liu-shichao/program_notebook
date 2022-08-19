@@ -2,7 +2,7 @@
 
 静态库编译命令
 ```
-bin/gn gen out/Static --args='is_official_build=true skia_use_system_harfbuzz=false skia_use_system_libwebp=false skia_use_gl=false skia_use_system_icu=false'
+bin/gn gen out/Static --args='is_official_build=true skia_use_system_harfbuzz=false skia_use_system_libwebp=false skia_use_system_libjpeg_turbo=false skia_use_gl=false skia_use_system_icu=false'
 ninja -C out/Static
 ```
 
@@ -746,44 +746,43 @@ demo的cmake
 cmake_minimum_required(VERSION 3.0.0)
 project(demo VERSION 0.1.0)
 set(CMAKE_CXX_STANDARD 17)
-set(_src /home/liushichao/test/skia_demo/thirdparty/include/modules/svg/src)
+
 add_executable(demo
     main.cpp
 )
-
+set(THIRD_PARTY_DIR "/home/liushichao/Exercise/test_skia/thirdparty")
 target_include_directories(
     ${PROJECT_NAME}
     PUBLIC
-    "/home/liushichao/test/skia_demo/thirdparty/include/src/shaders"
+    "${THIRD_PARTY_DIR}/include/src/shaders"
     "thirdparty/include/src/core"
-    "thirdparty/include/core"
+    # "/home/liushichao/Exercise/test_skia/thirdparty/include/include/core"
+    "thirdparty/include/include/core"
     "thirdparty/include"
     "thirdparty"
 )
 
 target_link_libraries(
     ${PROJECT_NAME}
-    "/home/liushichao/test/skia_demo/thirdparty/lib/libsvg.a"
-    "/home/liushichao/test/skia_demo/thirdparty/lib/libskia.a"
-    # "/home/liushichao/test/skia_demo/thirdparty/lib/libsktext.a"
-    "/home/liushichao/test/skia_demo/thirdparty/lib/libskshaper.a"
-    # "/home/liushichao/test/skia_demo/thirdparty/lib/libskottie.a"
-    "/home/liushichao/test/skia_demo/thirdparty/lib/libskunicode.a"
-    # "/home/liushichao/test/skia_demo/thirdparty/lib/libsksg.a"
-    # "/home/liushichao/test/skia_demo/thirdparty/lib/libskresources.a"
-    # "/home/liushichao/test/skia_demo/thirdparty/lib/libskparagraph.a"
-    # "/home/liushichao/test/skia_demo/thirdparty/lib/libskcms.a"
-    # "/home/liushichao/test/skia_demo/thirdparty/lib/libpiex.a"
-    # "/home/liushichao/test/skia_demo/thirdparty/lib/libpathkit.a"
-    # "/home/liushichao/test/skia_demo/thirdparty/lib/libparticles.a"
-    # "/home/liushichao/test/skia_demo/thirdparty/lib/libharfbuzz.a"
-    # "/home/liushichao/test/skia_demo/thirdparty/lib/libdng_sdk.a"
-    # "/home/liushichao/test/skia_demo/thirdparty/lib/libcompression_utils_portable.a"
+    "${THIRD_PARTY_DIR}/lib/libsvg.a"
+    "${THIRD_PARTY_DIR}/lib/libskia.a"
+    # "${THIRD_PARTY_DIR}/lib/libsktext.a"
+    "${THIRD_PARTY_DIR}/lib/libskshaper.a"
+    # "${THIRD_PARTY_DIR}/lib/libskottie.a"
+    "${THIRD_PARTY_DIR}/lib/libskunicode.a"
+    # "${THIRD_PARTY_DIR}/lib/libsksg.a"
+    # "${THIRD_PARTY_DIR}/lib/libskresources.a"
+    # "${THIRD_PARTY_DIR}/lib/libskparagraph.a"
+    # "${THIRD_PARTY_DIR}/lib/libskcms.a"
+    # "${THIRD_PARTY_DIR}/lib/libpiex.a"
+    # "${THIRD_PARTY_DIR}/lib/libpathkit.a"
+    # "${THIRD_PARTY_DIR}/lib/libparticles.a"
+    # "${THIRD_PARTY_DIR}/lib/libharfbuzz.a"
+    # "${THIRD_PARTY_DIR}/lib/libdng_sdk.a"
+    # "${THIRD_PARTY_DIR}/lib/libcompression_utils_portable.a"
     pthread
     png
     z
-    webp
-    jpeg
     expat
     fontconfig
     freetype
