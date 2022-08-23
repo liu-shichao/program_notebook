@@ -1,3 +1,19 @@
+### 24.c++获取函数返回地址
+
+来自谷歌浏览器源码
+
+```
+#if defined(COMPILER_MSVC)
+#define RETURN_ADDRESS() _ReturnAddress()
+#elif defined(COMPILER_GCC) && !BUILDFLAG(IS_NACL)
+#define RETURN_ADDRESS() \
+  __builtin_extract_return_addr(__builtin_return_address(0))
+#else
+#define RETURN_ADDRESS() nullptr
+#endif
+```
+
+
 ### 23.c++指定时间
 ```
 std::chrono::seconds(5)
