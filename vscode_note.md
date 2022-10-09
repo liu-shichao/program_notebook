@@ -87,7 +87,7 @@ vscode中输入command + p，再输入条中输入cpp.json,将下面的代码粘
 		"body": [
 			"#include \"${TM_FILENAME_BASE}.hpp\"",
 			"", //空行
-			"namespace ${2:sgmm} {", 
+			"namespace ${1:xiaobing_virtual_synthesis} {", 
 			"",
 			"",
 			"",
@@ -98,14 +98,14 @@ vscode中输入command + p，再输入条中输入cpp.json,将下面的代码粘
 	},
 
 	"cpp include file template.":{
-		"prefix": "INCLUDE", 
+		"prefix": "HPP", 
 		"body": [
-			"#ifndef ${TM_FILENAME_BASE/(.*)/${1:/upcase}_HPP/}",
-			"#define ${TM_FILENAME_BASE/(.*)/${1:/upcase}_HPP/}",
+			"#ifndef ${TM_FILENAME_BASE/(.*)/_${1:/upcase}_HPP_/}",
+			"#define ${TM_FILENAME_BASE/(.*)/_${1:/upcase}_HPP_/}",
 			"",
-			"namespace ${2:sgmm} {",    
+			"namespace xiaobing_virtual_synthesis {",    
 			"", //空行
-			"class ${TM_FILENAME_BASE/(.*)_.+/${1:/capitalize}/}${TM_FILENAME_BASE/.*_(.+)/${1:/capitalize}/}", 
+			"class ${1:${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}}", 
 			"{",
 			"public:",
 			"    ${1:${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}}();",
