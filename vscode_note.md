@@ -105,7 +105,7 @@ vscode中输入command + p，再输入条中输入cpp.json,将下面的代码粘
 			"",
 			"namespace ${2:sgmm} {",    
 			"", //空行
-			"class ${1:${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}}", 
+			"class ${TM_FILENAME_BASE/(.*)_.+/${1:/capitalize}/}${TM_FILENAME_BASE/.*_(.+)/${1:/capitalize}/}", 
 			"{",
 			"public:",
 			"    ${1:${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}}();",
