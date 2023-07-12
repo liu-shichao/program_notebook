@@ -14,4 +14,6 @@
 5.点安全中心-应用管理-权限-root权限管理，勾选下边的选项，点开始就行了，这样是基本的root了
 
 6.解锁system分区，输入adb root，给adb root权限，然后执行 adb disable-verity ，重启手机，完成
+
+7.安装supperSU，管理root应用
 ```
